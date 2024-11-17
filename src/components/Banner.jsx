@@ -31,7 +31,7 @@ const Banner = () => {
 //     },
 //   });
   return (
-    <div className="h-96">
+    <div className="">
        <Swiper
       // Include Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

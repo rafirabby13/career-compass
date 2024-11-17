@@ -1,6 +1,7 @@
 import Banner from "./Banner.jsx";
 import Footer from "./Footer.jsx";
 import Navbar from "./Navbar.jsx";
+import Services from "./Services.jsx";
 
 const Home = () => {
   return (
@@ -9,7 +10,10 @@ const Home = () => {
       <section className=" max-w-[85%] mx-auto">
         <Banner />
       </section>
-      <section className="min-h-screen max-w-[85%] mx-auto">Home Home</section>
+      <section className=" max-w-[85%] mx-auto">
+        <Services/>
+      </section>
+      
       <Footer />
     </div>
   );
