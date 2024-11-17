@@ -1,0 +1,23 @@
+[
+    {
+      "id": "001",
+      "category": "Online"
+    },
+    {
+      "id": "002",
+      "category": "Offline"
+    },
+    {
+      "id": "003",
+      "category": "Group"
+    },
+    {
+      "id": "004",
+      "category": "One-on-One"
+    },
+    {
+      "id": "005",
+      "category": "Self-Paced"
+    }
+  ]
+  
