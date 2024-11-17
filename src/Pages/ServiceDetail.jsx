@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+/* eslint-disable no-unused-vars */
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import user from "../assets/user.png";
+import { AuthContext } from "../Providers/AuthProvider.jsx";
 const ServiceDetail = () => {
   const { id } = useParams();
   // console.log(id);
   const [service, setServices] = useState({});
   const [comment, setComment] = useState([]);
+
+  
 
   useEffect(() => {
     fetch("../data.json")
