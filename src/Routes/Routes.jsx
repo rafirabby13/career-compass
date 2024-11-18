@@ -4,11 +4,15 @@ import Home from "../components/Home.jsx";
 import Banner from "../components/Banner.jsx";
 import Services from "../components/Services.jsx";
 import ServiceDetail from "../Pages/ServiceDetail.jsx";
+import Login from "../Pages/Login.jsx";
+import Register from "../Pages/Register.jsx";
+import Error from "../Pages/Error.jsx";
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <Error/>,
         children:[
             {
                 path: '',
@@ -27,6 +31,14 @@ export const router = createBrowserRouter([
                         element: <ServiceDetail/>
                     }
                 ]
+            },
+            {
+                path: '/login',
+                element: <Login/>
+            },
+            {
+                path: '/register',
+                element: <Register/>
             }
         ]
     }

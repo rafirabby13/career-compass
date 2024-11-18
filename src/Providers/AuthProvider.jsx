@@ -1,6 +1,7 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext } from "react";
-import {getAuth, GoogleAuthProvider, signInWithPopup} from 'firebase/auth'
+import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, updateProfile} from 'firebase/auth'
 import app from '../Firebase/Firebase.init.js'
 
 
@@ -15,11 +16,25 @@ const AuthProvider = ({children}) => {
     const loginWithGoogle=()=>{
         return signInWithPopup(auth, provider)
     }
+  const registerUser = (email, password)=>{
+    return createUserWithEmailAndPassword(auth, email, password)
+  }
+const updateUserPRofile=(name, photoUrl)=>{
 
-
+    return updateProfile(auth.currentUser,  {
+        displayName: name,
+        photoURL: photoUrl
+    })
+}
+const loginWithEmailPass=(email, password)=>{
+    return signInWithEmailAndPassword(auth, email, password)
+}
 
     const authInfo = {
         loginWithGoogle,
+        registerUser,
+        updateUserPRofile,
+        loginWithEmailPass
     }
     return (
         <AuthContext.Provider value={authInfo}>
