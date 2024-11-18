@@ -19,32 +19,32 @@ const Choose = () => {
       </div>
 
       <div className="cards-section grid grid-cols-4 gap-6 w-full">
-        <div className="  space-y-3 shadow-lg p-5 rounded-lg">
+        <div className="  space-y-3 shadow-lg p-5 rounded-lg bg-slate-100">
           <img className="h-32 shadow-lg " src={coaching} alt="" />
-          <div className="divider divider-end text-[#13131377] text-3xl ">01</div>
+          <div className="divider divider-end text-[#13131377] text-3xl py-4">01</div>
           <h1 className="text-2xl font-semibold text-black">Coaching Session</h1>
           <p>One-on-one personalized coaching to help you explore career options, set goals, and create actionable plans for success. 
           </p>
         </div>
-        <div className="  space-y-3 shadow-lg p-5 rounded-lg">
+        <div className="  space-y-3 shadow-lg p-5 rounded-lg bg-slate-100">
           <img className="h-32 shadow-lg " src={skill} alt="" />
-          <div className="divider divider-end text-[#13131377] text-3xl">02</div>
+          <div className="divider divider-end text-[#13131377] text-3xl py-4">02</div>
           <h1 className="text-2xl font-semibold text-black">Skill Development Workshop</h1>
           <p>
           Intensive workshops focused on enhancing key skills like communication, leadership, and technical expertise to boost your career.
           </p>
         </div>
-        <div className="  space-y-3 shadow-lg p-5 rounded-lg">
+        <div className="  space-y-3 shadow-lg p-5 rounded-lg bg-slate-100">
           <img className="h-32 shadow-lg " src={career} alt="" />
-          <div className="divider divider-end text-[#13131377] text-3xl">03</div>
+          <div className="divider divider-end text-[#13131377] text-3xl py-4">03</div>
           <h1 className="text-2xl font-semibold text-black">Career Mapping Consultation</h1>
           <p>
           Get expert insights into potential career paths tailored to your strengths, interests, and industry trends.
           </p>
         </div>
-        <div className="  space-y-3 shadow-lg p-5 rounded-lg">
+        <div className="  space-y-3 shadow-lg p-5 rounded-lg bg-slate-100">
           <img className="h-32 shadow-lg " src={interview} alt="" />
-          <div className="divider divider-end text-[#13131377] text-3xl">04</div>
+          <div className="divider divider-end text-[#13131377] text-3xl py-4">04</div>
           <h1 className="text-2xl font-semibold text-black">Interview Preparation Service</h1>
           <p>
           Master the art of interviewing with mock sessions, feedback, and strategies to leave a lasting impression.

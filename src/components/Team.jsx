@@ -12,22 +12,22 @@ const Team = () => {
             </div>
 
             <div className='grid grid-cols-4 gap-10'>
-                <div className="space-y-3 text-center">
+                <div className="space-y-3 text-center bg-slate-100">
                     <img className='h-80 mx-auto w-full' src={w1} alt="" />
                     <p className="text-red-500 font-bold text-xl">Emily Carter</p>
                     <p className="text-lg">Career Strategy Architect</p>
                 </div>
-                <div className="space-y-3 text-center">
+                <div className="space-y-3 text-center bg-slate-100">
                     <img className='h-80 mx-auto w-full' src={m1} alt="" />
                     <p className="text-red-500 font-bold text-xl">James Harper</p>
                     <p className="text-lg">Leadership and Personal Development</p>
                 </div>
-                <div className="space-y-3 text-center">
+                <div className="space-y-3 text-center bg-slate-100">
                     <img className='h-80 mx-auto w-full' src={w2} alt="" />
                     <p className="text-red-500 font-bold text-xl">Priya Shah</p>
                     <p className="text-lg">Career Change Specialist</p>
                 </div>
-                <div className="space-y-3 text-center">
+                <div className="space-y-3 text-center bg-slate-100">
                     <img className='h-80 mx-auto w-full' src={m2} alt="" />
                     <p className="text-red-500 font-bold text-xl">Ethan Brooks</p>
                     <p className="text-lg">Youth Career Coach</p>
