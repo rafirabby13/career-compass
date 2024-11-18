@@ -68,7 +68,7 @@ const Navbar = () => {
         {user && user?.email ? (
           <div className="flex items-center gap-5">
             <Link onClick={handleLogout} className="btn">Logout</Link>
-            <img className={`h-16 w-16 rounded-full hover:${user.displayName}`} src={user.photoURL} alt={user.displayName} />
+            <img className={`h-16 w-16 rounded-full `} src={user.photoURL} title={user.displayName} alt={user.displayName} />
             
           </div>
         ) : (

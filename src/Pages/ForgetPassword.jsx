@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 
@@ -9,6 +11,9 @@ const ForgetPassword = () => {
     const {email, setEmail, forgetPassword} = useContext(AuthContext)
     
 
+    const navigate = useNavigate()
+    const location = useLocation()
+
     
     const handleReset=(e)=>{
         e.preventDefault()
@@ -17,6 +22,7 @@ const ForgetPassword = () => {
         .then(() => {
             // Password reset email sent!
             // ..
+            window.location.replace('https://mail.google.com/mail/u/2/#inbox')
           })
           .catch((error) => {
             const errorCode = error.code;

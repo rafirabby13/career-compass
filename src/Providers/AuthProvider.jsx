@@ -51,8 +51,8 @@ const forgetPassword = (email)=>{
 useEffect(()=>{
     const unsubscribe = onAuthStateChanged(auth, currentUser=>{
         // console.log(currentUser);
-        setUser(currentUser)
         setLoading(false)
+        setUser(currentUser)
     })
 
     return ()=>{

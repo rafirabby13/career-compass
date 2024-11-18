@@ -12,6 +12,7 @@ import PrivateRoutes from "./PrivateRoutes.jsx";
 import CategoryNav from "../components/CategoryNav.jsx";
 import About from "../Pages/About.jsx";
 import ForgetPassword from "../Pages/ForgetPassword.jsx";
+import MyProfile from "../Pages/MyProfile.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
             {
                 path: '/forgetPassword',
                 element: <ForgetPassword/>
+            },
+            {
+                path: '/profile',
+                element: <PrivateRoutes><MyProfile/></PrivateRoutes>
             }
             
         ]

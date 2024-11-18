@@ -39,7 +39,7 @@ const Login = () => {
   const handleGoogleSignUp = () => {
     loginWithGoogle()
       .then((res) => {
-        //   console.log(res.user);
+          console.log(res.user);
       })
       .catch((err) => {
         setErr(err.message);
