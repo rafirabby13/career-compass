@@ -4,22 +4,27 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
+import ForgetPassword from "./ForgetPassword.jsx";
 
 const Login = () => {
-  const { loginWithEmailPass, loginWithGoogle } = useContext(AuthContext);
+  const { loginWithEmailPass, loginWithGoogle, setEmail } = useContext(AuthContext);
   const [hide, setHide] = useState(true);
   const [err, setErr] = useState("");
+  
 
 
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(location);
+  // console.log(location);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("object");
     const email = e.target.email.value;
     const password = e.target.password.value;
+    
+    
+
     loginWithEmailPass(email, password)
       .then((res) => {
         console.log(res.user);
@@ -42,10 +47,10 @@ const Login = () => {
   };
   const handlePassShow = () => {
     setHide(!hide);
-    // console.log(hide);
+    // console.log(email);
   };
   return (
-    <div className="max-w-lg mx-auto ">
+    <div className="max-w-lg mx-auto py-20">
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">
@@ -53,6 +58,7 @@ const Login = () => {
               <span className="label-text">Email</span>
             </label>
             <input
+            onChange={(e)=> setEmail(e.target.value)}
               type="email"
               placeholder="Your Email"
               name="email"
@@ -77,6 +83,9 @@ const Login = () => {
             </div>
           </div>
           <p className="text-2xl text-red-500 font-bold">{err}</p>
+          <label className="label">
+            <Link to='/forgetPassword' href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+          </label>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Login</button>
           </div>
@@ -97,6 +106,7 @@ const Login = () => {
           Sign Up With Google
         </button>
       </div>
+    
     </div>
   );
 };

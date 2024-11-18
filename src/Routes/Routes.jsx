@@ -11,6 +11,7 @@ import Error from "../Pages/Error.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx";
 import CategoryNav from "../components/CategoryNav.jsx";
 import About from "../Pages/About.jsx";
+import ForgetPassword from "../Pages/ForgetPassword.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -46,7 +47,11 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/about',
-                element: <About/>
+                element: <PrivateRoutes><About/></PrivateRoutes>
+            },
+            {
+                path: '/forgetPassword',
+                element: <ForgetPassword/>
             }
             
         ]
