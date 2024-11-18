@@ -13,24 +13,42 @@ const Register = () => {
     const email = e.target.email.value;
     const photoURL = e.target.photoURL.value;
     const password = e.target.password.value;
-    setErr('')
-    registerUser(email, password)
-      .then((res) => {
-        console.log(res.user);
-        updateUserPRofile(name, photoURL)
-          .then((res) => {
-            console.log("res");
-          })
-          .catch((err) => {
-            console.log(err.message);
-            setErr(err.message)
-          });
-      })
-      .catch((err) => {
-        console.log(err.message);
-        setErr(err.message)
-
-      });
+    setErr('');
+    const lower = /[a-z]/
+    const upper = /[A-Z]/;
+    if (password.length > 5) {
+      if (upper.test(password)) {
+       if (lower.test(password)) {
+        registerUser(email, password)
+        .then((res) => {
+          console.log(res.user);
+          updateUserPRofile(name, photoURL)
+            .then((res) => {
+              // console.log("res");
+              e.target.reset()
+            })
+            .catch((err) => {
+              console.log(err.message);
+              setErr(err.message)
+            });
+        })
+        .catch((err) => {
+          console.log(err.message);
+          setErr(err.message)
+  
+        });
+       }
+       else{
+        setErr('Password must contain a lower case')
+       }
+      }
+      else{
+        setErr('Password Must contain An Uppercase')
+      }
+    }
+    else{
+      setErr('Password Must be at least 6 characters')
+    }
   };
 
   const handleGoogleSignUp=()=>{
@@ -96,6 +114,7 @@ const Register = () => {
               required
             />
           </div>
+          <p className="">{err}</p>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
           </div>

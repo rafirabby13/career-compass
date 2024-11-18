@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import { useContext } from "react";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
 import { Link } from "react-router-dom";
@@ -12,6 +13,7 @@ const Login = () => {
       loginWithEmailPass(email, password)
         .then((res) => {
           console.log(res.user);
+          e.target.reset()
          
         })
         .catch((err) => {
@@ -58,6 +60,7 @@ const Login = () => {
                 required
               />
             </div>
+          
             <div className="form-control mt-6">
               <button className="btn btn-primary">Login</button>
             </div>
