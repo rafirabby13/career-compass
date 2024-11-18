@@ -20,7 +20,7 @@ const Home = () => {
      </section>
       
       <Outlet />
-      <Footer />
+      
     </div>
   );
 };
