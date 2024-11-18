@@ -1,33 +1,36 @@
-import img from '../assets/df.png'
+import m1 from '../assets/m1.jpg'
+import m2 from '../assets/m2.jpg'
+import w1 from '../assets/w1.jpg'
+import w2 from '../assets/w2.jpg'
 
 const Team = () => {
     return (
         <div className='py-10'>
-            <div>
-                <h1>Our Experts</h1>
-                <p>Dedicated Career Counseling Team</p>
+            <div className='text-center py-10 space-y-5'>
+                <h1 className="text-xl font-semibold text-red-500">Our Experts</h1>
+                <p className="text-3xl font-semibold text-black">Dedicated Career Counseling Team</p>
             </div>
 
             <div className='grid grid-cols-4 gap-10'>
-                <div>
-                    <img className='h-60 mx-auto w-full' src={img} alt="" />
-                    <p>Emily Carter</p>
-                    <p>Career Strategy Architect</p>
+                <div className="space-y-3 text-center">
+                    <img className='h-80 mx-auto w-full' src={w1} alt="" />
+                    <p className="text-red-500 font-bold text-xl">Emily Carter</p>
+                    <p className="text-lg">Career Strategy Architect</p>
                 </div>
-                <div>
-                    <img className='h-60 mx-auto w-full' src={img} alt="" />
-                    <p>James Harper</p>
-                    <p>Leadership and Personal Development</p>
+                <div className="space-y-3 text-center">
+                    <img className='h-80 mx-auto w-full' src={m1} alt="" />
+                    <p className="text-red-500 font-bold text-xl">James Harper</p>
+                    <p className="text-lg">Leadership and Personal Development</p>
                 </div>
-                <div>
-                    <img className='h-60 mx-auto w-full' src={img} alt="" />
-                    <p>Priya Shah</p>
-                    <p>Career Change Specialist</p>
+                <div className="space-y-3 text-center">
+                    <img className='h-80 mx-auto w-full' src={w2} alt="" />
+                    <p className="text-red-500 font-bold text-xl">Priya Shah</p>
+                    <p className="text-lg">Career Change Specialist</p>
                 </div>
-                <div>
-                    <img className='h-60 mx-auto w-full' src={img} alt="" />
-                    <p>Ethan Brooks</p>
-                    <p>Youth Career Coach</p>
+                <div className="space-y-3 text-center">
+                    <img className='h-80 mx-auto w-full' src={m2} alt="" />
+                    <p className="text-red-500 font-bold text-xl">Ethan Brooks</p>
+                    <p className="text-lg">Youth Career Coach</p>
                 </div>
             </div>
         </div>
