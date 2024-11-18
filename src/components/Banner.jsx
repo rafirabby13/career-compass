@@ -31,7 +31,7 @@ const Banner = () => {
 //     },
 //   });
   return (
-    <div className=" max-w-[85%] mx-auto">
+    <div className=" ">
        <Swiper
       // Include Swiper modules
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}

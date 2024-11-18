@@ -1,0 +1,163 @@
+[
+    {
+      "id": 1,
+      "name": "Sophia M. Davis",
+      "profession": "Software Engineer",
+      "feedback": "The personalized counseling sessions helped me switch careers smoothly. Highly recommend their services!",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 2,
+      "name": "Michael J. Lee",
+      "profession": "Graphic Designer",
+      "feedback": "Their portfolio-building workshop boosted my confidence. The advice was spot on!",
+      "rating": 4,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 3,
+      "name": "Amelia T. Johnson",
+      "profession": "Marketing Specialist",
+      "feedback": "I received clear guidance on enhancing my LinkedIn profile, which led to job offers within weeks.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 4,
+      "name": "Ethan B. Walker",
+      "profession": "Data Scientist",
+      "feedback": "The mock interview preparation session was detailed and tailored to my specific industry.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 5,
+      "name": "Isabella R. Martinez",
+      "profession": "HR Manager",
+      "feedback": "Their career counseling helped me explore opportunities I hadn’t considered before.",
+      "rating": 4,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 6,
+      "name": "Liam H. White",
+      "profession": "Startup Founder",
+      "feedback": "The entrepreneurial mentoring was incredibly insightful. Their advice was crucial for my startup journey.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 7,
+      "name": "Olivia W. Thompson",
+      "profession": "Content Writer",
+      "feedback": "The creative writing career roadmap was a lifesaver! I now feel confident in pursuing my passion.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 8,
+      "name": "Noah T. Scott",
+      "profession": "Mechanical Engineer",
+      "feedback": "Their resume-writing service landed me interviews at top companies. Outstanding team!",
+      "rating": 4,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 9,
+      "name": "Ava P. Brown",
+      "profession": "Business Analyst",
+      "feedback": "Their market trend analysis helped me tailor my job search and secure my dream role.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 10,
+      "name": "William C. Taylor",
+      "profession": "Digital Marketer",
+      "feedback": "The mentorship sessions helped me transition into digital marketing smoothly. Highly recommended!",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 11,
+      "name": "Mia R. Adams",
+      "profession": "Freelancer",
+      "feedback": "Their freelance career advice gave me the clarity I needed to start my journey.",
+      "rating": 4,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 12,
+      "name": "James W. Clark",
+      "profession": "Public Relations Manager",
+      "feedback": "They provided excellent strategies for networking and building professional connections.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 13,
+      "name": "Emily L. Hernandez",
+      "profession": "Teacher",
+      "feedback": "I found new opportunities in educational technology thanks to their career advice.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 14,
+      "name": "Alexander P. Collins",
+      "profession": "Photographer",
+      "feedback": "Their sessions helped me understand how to market my skills better. Worth every penny!",
+      "rating": 4,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 15,
+      "name": "Charlotte H. Rivera",
+      "profession": "Psychologist",
+      "feedback": "Their advice on work-life balance and career growth was truly invaluable.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 16,
+      "name": "Benjamin G. Ward",
+      "profession": "Game Developer",
+      "feedback": "The portfolio critique helped me secure my dream job in the gaming industry!",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 17,
+      "name": "Abigail N. Lewis",
+      "profession": "Research Scientist",
+      "feedback": "Their research career roadmap was very comprehensive and easy to follow.",
+      "rating": 4,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 18,
+      "name": "Lucas H. Ramirez",
+      "profession": "Cybersecurity Analyst",
+      "feedback": "The career advice helped me break into the competitive cybersecurity field.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 19,
+      "name": "Ella M. Brooks",
+      "profession": "Interior Designer",
+      "feedback": "The coaching sessions gave me clarity and direction in pursuing interior design.",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    },
+    {
+      "id": 20,
+      "name": "Henry J. Perez",
+      "profession": "AI Specialist",
+      "feedback": "Their mentorship program helped me advance in the AI field. Excellent guidance!",
+      "rating": 5,
+      "image": "https://via.placeholder.com/150"
+    }
+  ]
+  

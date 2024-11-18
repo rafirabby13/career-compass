@@ -14,7 +14,7 @@ const Services = () => {
         })
     },[])
     return (
-        <div className="py-40 max-w-[85%] mx-auto">
+        <div className="">
             <div className="grid grid-cols-3 gap-5">
                 {
                     services.map(service=><ServiceCard

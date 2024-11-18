@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main.jsx";
 import Home from "../components/Home.jsx";
@@ -8,6 +9,7 @@ import Login from "../Pages/Login.jsx";
 import Register from "../Pages/Register.jsx";
 import Error from "../Pages/Error.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx";
+import CategoryNav from "../components/CategoryNav.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -19,13 +21,12 @@ export const router = createBrowserRouter([
                 path: '',
                 element: <Home/>,
                 children:[
-                    {
-                        path: '',
-                        element: <div>
-                            <Banner/>
-                            <Services/>
-                        </div>
-                    },
+                    // {
+                    //     path: '',
+                    //     element: <div>
+                            
+                    //     </div>
+                    // },
                    
                     {
                         path: "/serviceDetail/:id",

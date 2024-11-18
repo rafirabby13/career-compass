@@ -4,18 +4,22 @@ import Banner from "./Banner.jsx";
 import Footer from "./Footer.jsx";
 import Navbar from "./Navbar.jsx";
 import Services from "./Services.jsx";
+import CategoryNav from "./CategoryNav.jsx";
+import Feature from "./Feature.jsx";
+import Reviews from "./Reviews.jsx";
 
 const Home = () => {
   return (
     <div className="min-h-screen">
-      <Navbar />
-      {/* <section className=" max-w-[85%] mx-auto">
-        <Banner />
-      </section>
-      <section className=" max-w-[85%] mx-auto">
-        <Services/>
-      </section> */}
-      <Outlet/>
+     <section className="max-w-[85%] mx-auto">
+     {/* <Banner /> */}
+      {/* <CategoryNav /> */}
+      {/* <Services /> */}
+      <Feature/>
+      <Reviews/>
+     </section>
+      
+      <Outlet />
       <Footer />
     </div>
   );

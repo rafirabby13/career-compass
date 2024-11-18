@@ -54,7 +54,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className=" text-xl">
+        <Link to="/" className="font-bold text-xl animate__animated animate__flip animate__slow animate__delay-3s animate__infinite">
           Career Compass
         </Link>
       </div>
