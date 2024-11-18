@@ -31,12 +31,13 @@ export const router = createBrowserRouter([
                     //     </div>
                     // },
                    
-                    {
-                        path: "/serviceDetail/:id",
-                        element: <PrivateRoutes><ServiceDetail/></PrivateRoutes>
-                    },
+                   
                     
                 ]
+            },
+            {
+                path: "/serviceDetail/:id",
+                element: <PrivateRoutes><ServiceDetail/></PrivateRoutes>
             },
             {
                 path: '/login',

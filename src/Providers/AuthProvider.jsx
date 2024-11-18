@@ -45,6 +45,8 @@ const logoutUser = ()=>{
 }
 
 const forgetPassword = (email)=>{
+    setLoading(true)
+
     return sendPasswordResetEmail(auth, email)
 }
 

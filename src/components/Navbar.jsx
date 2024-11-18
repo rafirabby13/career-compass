@@ -1,22 +1,20 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
-
+import logo from "../assets/logo.jpg";
 const Navbar = () => {
   const { user, logoutUser } = useContext(AuthContext);
   // console.log(user);
 
-  const handleLogout=()=>{
+  const handleLogout = () => {
     logoutUser()
-    .then(()=>{
-      // console.log('success');
-    })
-    .catch(err=>{
-      console.log(err.message);
-
-    })
-
-  }
+      .then(() => {
+        // console.log('success');
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
   const links = (
     <>
       <li>
@@ -57,9 +55,16 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to="/" className="font-bold text-xl animate__animated animate__flip animate__slow animate__delay-3s animate__infinite">
-          Career Compass
-        </Link>
+        <div className="flex items-center gap-4">
+          <img
+            className="h-16 w-16 animate__animated animate__flip animate__slow animate__delay-3s animate__infinite rounded-full"
+            src={logo}
+            alt=""
+          />
+          <Link to="/" className="font-bold text-2xl ">
+            Career Compass
+          </Link>
+        </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
@@ -67,9 +72,15 @@ const Navbar = () => {
       <div className="navbar-end">
         {user && user?.email ? (
           <div className="flex items-center gap-5">
-            <Link onClick={handleLogout} className="btn">Logout</Link>
-            <img className={`h-16 w-16 rounded-full `} src={user.photoURL} title={user.displayName} alt={user.displayName} />
-            
+            <Link onClick={handleLogout} className="btn">
+              Logout
+            </Link>
+            <img
+              className={`h-16 w-16 rounded-full `}
+              src={user.photoURL}
+              title={user.displayName}
+              alt={user.displayName}
+            />
           </div>
         ) : (
           <Link to="/login" className="btn">
