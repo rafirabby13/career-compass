@@ -10,6 +10,7 @@ import Register from "../Pages/Register.jsx";
 import Error from "../Pages/Error.jsx";
 import PrivateRoutes from "./PrivateRoutes.jsx";
 import CategoryNav from "../components/CategoryNav.jsx";
+import About from "../Pages/About.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -41,6 +42,10 @@ export const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register/>
+            },
+            {
+                path: '/about',
+                element: <About/>
             }
         ]
     }

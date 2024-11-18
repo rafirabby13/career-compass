@@ -1,6 +1,6 @@
 import lady from "../assets/lady.jpg";
 import success from "../assets/11_Success-1.jpg";
-import career from "../assets/career-58 (1)-min.png";
+import career from "../assets/career-58 (1)-min.jpg";
 import guide from "../assets/icons8-guidance-64.png";
 import meeting from "../assets/icons8-meeting-80.png";import 'animate.css';
 import { Link } from "react-router-dom";
@@ -21,7 +21,7 @@ const Feature = () => {
         <div className="flex gap-20 items-center justify-between  ">
       <div className="w-1/2 relative">
         <img  src={lady} alt="Career Guidance Icon" />
-        <img className="hidden lg:flex absolute -bottom-20 -left-20 shadow-2xl rounded-xl  h-60 animate__animated animate__pulse animate__fast animate__delay-3s animate__infinite"  src={career} alt="Career Growth Icon" />
+        <img className="hidden lg:flex absolute -bottom-20 -left-20 shadow-2xl rounded-xl  h-60 animate__animated animate__pulse animate__fast animate__delay-3s animate__infinite "  src={career} alt="Career Growth Icon" />
         <img className=" hidden lg:flex absolute -top-20 -right-10  shadow-2xl rounded-xl   h-60 animate__animated animate__pulse animate__fast animate__delay-3s animate__infinite"   src={success} alt="Success Icon" />
       </div>
       <div className="w-1/2 space-y-4">
@@ -32,7 +32,7 @@ const Feature = () => {
         </p>
 
         <div className="flex items-center gap-5 bg-slate-100 p-7 rounded-lg">
-          <img className="h-24" src={meeting} alt="" />
+          <img className="h-24 " src={meeting} alt="" />
           <div>
             <h1 className="font-bold text-xl mb-1
             ">500+ Tailored Career Counseling Sessions</h1>
