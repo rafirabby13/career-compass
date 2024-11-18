@@ -1,13 +1,29 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider.jsx";
 
 const Navbar = () => {
+  const { user, logoutUser } = useContext(AuthContext);
+  // console.log(user);
+
+  const handleLogout=()=>{
+    logoutUser()
+    .then(()=>{
+      // console.log('success');
+    })
+    .catch(err=>{
+      console.log(err.message);
+
+    })
+
+  }
   const links = (
     <>
       <li>
-        <NavLink to='/'>Home</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <NavLink to='/profile'>My Profile</NavLink>
+        <NavLink to="/profile">My Profile</NavLink>
       </li>
     </>
   );
@@ -38,15 +54,25 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <Link to='/' className=" text-xl">Career Compass</Link>
+        <Link to="/" className=" text-xl">
+          Career Compass
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
-         {links}
-        </ul>
+        <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
       <div className="navbar-end">
-        <Link to='/login' className="btn">Login</Link>
+        {user && user?.email ? (
+          <div className="flex items-center gap-5">
+            <Link onClick={handleLogout} className="btn">Logout</Link>
+            <img className={`h-16 w-16 rounded-full hover:${user.displayName}`} src={user.photoURL} alt={user.displayName} />
+            
+          </div>
+        ) : (
+          <Link to="/login" className="btn">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );

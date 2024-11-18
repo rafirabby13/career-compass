@@ -7,6 +7,7 @@ import ServiceDetail from "../Pages/ServiceDetail.jsx";
 import Login from "../Pages/Login.jsx";
 import Register from "../Pages/Register.jsx";
 import Error from "../Pages/Error.jsx";
+import PrivateRoutes from "./PrivateRoutes.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -28,7 +29,7 @@ export const router = createBrowserRouter([
                    
                     {
                         path: "/serviceDetail/:id",
-                        element: <ServiceDetail/>
+                        element: <PrivateRoutes><ServiceDetail/></PrivateRoutes>
                     }
                 ]
             },

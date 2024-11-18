@@ -1,11 +1,22 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 
 const Register = () => {
-  const [err, setErr] = useState('')
-  const { registerUser, updateUserPRofile, loginWithGoogle } = useContext(AuthContext);
+  const [err, setErr] = useState("");
+  const [hide, setHide] = useState(true);
+  const { registerUser, updateUserPRofile, loginWithGoogle } =
+    useContext(AuthContext);
+
+    
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(location);
+
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("object");
@@ -13,55 +24,55 @@ const Register = () => {
     const email = e.target.email.value;
     const photoURL = e.target.photoURL.value;
     const password = e.target.password.value;
-    setErr('');
-    const lower = /[a-z]/
+    setErr("");
+    const lower = /[a-z]/;
     const upper = /[A-Z]/;
     if (password.length > 5) {
       if (upper.test(password)) {
-       if (lower.test(password)) {
-        registerUser(email, password)
-        .then((res) => {
-          console.log(res.user);
-          updateUserPRofile(name, photoURL)
+        if (lower.test(password)) {
+          registerUser(email, password)
             .then((res) => {
-              // console.log("res");
-              e.target.reset()
+              console.log(res.user);
+              updateUserPRofile(name, photoURL)
+                .then((res) => {
+                  // console.log("res");
+                  e.target.reset();
+                  navigate(location?.state ? location.state : "/");
+                })
+                .catch((err) => {
+                  console.log(err.message);
+                  setErr(err.message);
+                });
             })
             .catch((err) => {
               console.log(err.message);
-              setErr(err.message)
+              setErr(err.message);
             });
-        })
-        .catch((err) => {
-          console.log(err.message);
-          setErr(err.message)
-  
-        });
-       }
-       else{
-        setErr('Password must contain a lower case')
-       }
+        } else {
+          setErr("Password must contain a lower case");
+        }
+      } else {
+        setErr("Password Must contain An Uppercase");
       }
-      else{
-        setErr('Password Must contain An Uppercase')
-      }
-    }
-    else{
-      setErr('Password Must be at least 6 characters')
+    } else {
+      setErr("Password Must be at least 6 characters");
     }
   };
 
-  const handleGoogleSignUp=()=>{
+  const handleGoogleSignUp = () => {
     loginWithGoogle()
-    .then(res=>{
+      .then((res) => {
         console.log(res.user);
-    })
-    .catch(err=>{
+      })
+      .catch((err) => {
         console.log(err.message);
-        setErr(err.message)
-
-    })
-  }
+        setErr(err.message);
+      });
+  };
+  const handlePassShow = () => {
+    setHide(!hide);
+    console.log(hide);
+  };
   return (
     <div className="max-w-lg mx-auto ">
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
@@ -106,24 +117,42 @@ const Register = () => {
             <label className="label">
               <span className="label-text">Password</span>
             </label>
-            <input
-              type="password"
-              name="password"
-              placeholder="Your password"
-              className="input input-bordered"
-              required
-            />
+            <div className="flex items-center relative">
+              <input
+                type={hide ? "password" : "text"}
+                name="password"
+                placeholder="Your password"
+                className="input input-bordered w-full"
+                required
+              />
+              <div
+                onClick={handlePassShow}
+                className="text-2xl absolute right-3 cursor-pointer"
+              >
+                {hide ? <BsEyeSlash /> : <BsEyeFill />}
+              </div>
+            </div>
           </div>
-          <p className="">{err}</p>
+          <p className="text-2xl text-red-500 font-bold">{err}</p>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
           </div>
-          <p className="py-2">Already have a account? <Link className="text-lg text-green-600 underline" to='/login'>Login</Link></p>
+          <p className="py-2">
+            Already have a account?{" "}
+            <Link className="text-lg text-green-600 underline" to="/login">
+              Login
+            </Link>
+          </p>
         </form>
       </div>
       <div className="">
-        <div className="divider divider-accent py-10">Or</div>
-        <button onClick={handleGoogleSignUp} className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-green-600">Sign Up With Google</button>
+        <div className="divider divider-accent py-10">OR</div>
+        <button
+          onClick={handleGoogleSignUp}
+          className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-green-600"
+        >
+          Sign Up With Google
+        </button>
       </div>
     </div>
   );
