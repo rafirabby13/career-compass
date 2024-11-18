@@ -12,9 +12,9 @@ const Home = () => {
   return (
     <div className="min-h-screen">
      <section className="max-w-[85%] mx-auto">
-     {/* <Banner /> */}
-      {/* <CategoryNav /> */}
-      {/* <Services /> */}
+     <Banner />
+      <CategoryNav />
+      <Services />
       <Feature/>
       <Reviews/>
      </section>
