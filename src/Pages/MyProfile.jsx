@@ -6,7 +6,6 @@ const MyProfile = () => {
   const { user, updateUserPRofile } = useContext(AuthContext);
 
   const { displayName, email, photoURL, uid } = user;
-
   const handleProfileUpdate = (e) => {
     e.preventDefault();
 
