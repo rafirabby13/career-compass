@@ -1,26 +1,24 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import { AuthContext } from "../Providers/AuthProvider.jsx";
+import { auth, AuthContext } from "../Providers/AuthProvider.jsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
+import Swal from "sweetalert2";
 
 const Register = () => {
   const [err, setErr] = useState("");
   const [hide, setHide] = useState(true);
-  const { registerUser, updateUserPRofile, loginWithGoogle } =
+  const { registerUser, updateUserPRofile, loginWithGoogle, setUser } =
     useContext(AuthContext);
 
-    
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location);
-
-
+  // console.log(location);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("object");
-    const name = e.target.name.value;
+    const displayName = e.target.name.value;
     const email = e.target.email.value;
     const photoURL = e.target.photoURL.value;
     const password = e.target.password.value;
@@ -33,45 +31,92 @@ const Register = () => {
           registerUser(email, password)
             .then((res) => {
               console.log(res.user);
-              updateUserPRofile(name, photoURL)
+
+              // setUser(res.user);
+              updateUserPRofile(displayName, photoURL)
                 .then((res) => {
-                  // console.log("res");
+                  const updatedUser = auth.currentUser;
+                  console.log(updatedUser);
+                  auth.currentUser.reload();
+                  setUser(updatedUser);
+
                   e.target.reset();
+                  Swal.fire({
+                    icon: "success",
+                    title: "Yess...",
+                    text: "Registered and logged in!",
+                  });
                   navigate(location?.state ? location.state : "/");
                 })
                 .catch((err) => {
-                  console.log(err.message);
+                  // console.log(err.message);
+                  Swal.fire({
+                    icon: "error",
+                    title: "Something went wrong!",
+                    text: `${err.message}`,
+                  });
                   setErr(err.message);
                 });
             })
             .catch((err) => {
-              console.log(err.message);
+              // console.log(err.message);
+              Swal.fire({
+                icon: "error",
+                title: "Something went wrong!",
+                text: `${err.message}`,
+              });
               setErr(err.message);
             });
         } else {
           setErr("Password must contain a lower case");
+          Swal.fire({
+            icon: "error",
+            title: "Something went wrong!",
+            text: `Password must contain a lower case`,
+          });
         }
       } else {
         setErr("Password Must contain An Uppercase");
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong!",
+          text: `Password Must contain An Uppercase`,
+        });
       }
     } else {
       setErr("Password Must be at least 6 characters");
+      Swal.fire({
+        icon: "error",
+        title: "Something went wrong!",
+        text: `Password Must be at least 6 characters`,
+      });
     }
   };
 
   const handleGoogleSignUp = () => {
     loginWithGoogle()
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
+        setUser(res.user);
+        Swal.fire({
+          icon: "success",
+          title: "Yess...",
+          text: "Registered and logged in!",
+        });
       })
       .catch((err) => {
-        console.log(err.message);
+        // console.log(err.message);
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong!",
+          text: `${err.message}`,
+        });
         setErr(err.message);
       });
   };
   const handlePassShow = () => {
     setHide(!hide);
-    console.log(hide);
+    // console.log(hide);
   };
   return (
     <div className="max-w-lg mx-auto ">
@@ -133,7 +178,7 @@ const Register = () => {
               </div>
             </div>
           </div>
-          <p className="text-2xl text-red-500 font-bold">{err}</p>
+          {/* <p className="text-2xl text-red-500 font-bold">{err}</p> */}
           <div className="form-control mt-6">
             <button className="btn btn-primary">Register</button>
           </div>

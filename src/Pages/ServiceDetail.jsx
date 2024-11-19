@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import user from "../assets/user.png";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
+import { Helmet } from "react-helmet";
 const ServiceDetail = () => {
   const { id } = useParams();
   // console.log(id);
@@ -44,6 +45,9 @@ const ServiceDetail = () => {
   };
   return (
     <div className="min-h-screen">
+       <Helmet>
+        <title>Detail | Career Compass</title>
+      </Helmet>
       <div className="max-w-4xl mx-auto p-10 bg-white shadow-lg rounded-lg border ">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-start gap-6">

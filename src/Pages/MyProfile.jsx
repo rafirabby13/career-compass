@@ -1,19 +1,29 @@
 /* eslint-disable no-unused-vars */
 import { useContext } from "react";
-import { AuthContext } from "../Providers/AuthProvider.jsx";
+import { auth, AuthContext } from "../Providers/AuthProvider.jsx";
+import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
 
 const MyProfile = () => {
-  const { user, updateUserPRofile } = useContext(AuthContext);
+  const { user, updateUserPRofile , setUser} = useContext(AuthContext);
 
   const { displayName, email, photoURL, uid } = user;
-  const handleProfileUpdate = (e) => {
+
+  const navigate = useNavigate();
+
+  const handleProfileUpdate = async (e) => {
     e.preventDefault();
 
-    const name = e.target.name.value;
+    const displayName = e.target.name.value;
     const photoURL = e.target.photoURL.value;
-    updateUserPRofile(name, photoURL)
-      .then(() => {
+    await updateUserPRofile(displayName, photoURL)
+      .then((res) => {
+        navigate("/");
         console.log("updated");
+        auth.currentUser.reload()
+        const updatedUser = auth.currentUser;
+        console.log(updatedUser);
+        setUser(updatedUser)
         // ...
       })
       .catch((error) => {
@@ -23,13 +33,16 @@ const MyProfile = () => {
       });
   };
   return (
-    <div className="min-h-screen max-w-[80%] mx-auto">
+    <div className="min-h-screen max-w-[80%] mx-auto pb-20">
+      <Helmet>
+        <title>Profile | Career Compass</title>
+      </Helmet>
       <div className="text-center space-y-4">
         <h2 className="font-semibold text-3xl">Welcome, {displayName}!</h2>
         <img
           src={photoURL}
           alt="User Profile"
-          className="rounded-full mx-auto"
+          className="rounded-full mx-auto h-[300px]"
         />
         <p>Email: {user.email}</p>
 

@@ -2,6 +2,10 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
 import logo from "../assets/logo.jpg";
+import Swal from "sweetalert2";
+
+
+
 const Navbar = () => {
   const { user, logoutUser } = useContext(AuthContext);
   // console.log(user);
@@ -10,21 +14,31 @@ const Navbar = () => {
     logoutUser()
       .then(() => {
         // console.log('success');
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Logged Out!",
+        });
       })
       .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: `${err.message}`,
+          text: "Something went wrong!",
+        });
         console.log(err.message);
       });
   };
   const links = (
     <>
       <li>
-        <NavLink to="/">Home</NavLink>
+        <NavLink to="/" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>Home</NavLink>
       </li>
       <li>
-        <NavLink to="/profile">My Profile</NavLink>
+        <NavLink to="/profile" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>My Profile</NavLink>
       </li>
       <li>
-        <NavLink to="/about">About Us</NavLink>
+        <NavLink to="/about" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>About Us</NavLink>
       </li>
     </>
   );
@@ -72,18 +86,18 @@ const Navbar = () => {
       <div className="navbar-end">
         {user && user?.email ? (
           <div className="flex items-center gap-5">
-            <Link onClick={handleLogout} className="btn">
+            <Link onClick={handleLogout} className="btn bg-[#c3002f] text-[#FFF0D1]">
               Logout
             </Link>
             <img
               className={`h-16 w-16 rounded-full `}
-              src={user.photoURL}
-              title={user.displayName}
-              alt={user.displayName}
+              src={user?.photoURL}
+              title={user?.displayName}
+              alt={user?.displayName}
             />
           </div>
         ) : (
-          <Link to="/login" className="btn">
+          <Link to="/login" className="btn bg-[#c3002f] text-[#FFF0D1]">
             Login
           </Link>
         )}

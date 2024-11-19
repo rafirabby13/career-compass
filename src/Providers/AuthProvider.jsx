@@ -1,83 +1,89 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { createContext, useEffect, useState } from "react";
-import {createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile} from 'firebase/auth'
-import app from '../Firebase/Firebase.init.js'
+import {
+  createUserWithEmailAndPassword,
+  getAuth,
+  GoogleAuthProvider,
+  onAuthStateChanged,
+  sendPasswordResetEmail,
+  signInWithEmailAndPassword,
+  signInWithPopup,
+  signOut,
+  updateProfile,
+} from "firebase/auth";
+import app from "../Firebase/Firebase.init.js";
 
+export const auth = getAuth(app);
 
-const auth = getAuth(app)
-export const AuthContext = createContext(null)
+export const AuthContext = createContext(null);
 
+const AuthProvider = ({ children }) => {
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [email, setEmail] = useState("");
 
-const AuthProvider = ({children}) => {
+  const provider = new GoogleAuthProvider();
 
-    const [user, setUser] =  useState(null)
-    const [loading, setLoading] =  useState(true)
-    const [email, setEmail] =  useState('')
-
-    const provider = new GoogleAuthProvider()
-
-
-
-    const loginWithGoogle=()=>{
-        setLoading(true)
-        return signInWithPopup(auth, provider)
-    }
-  const registerUser = (email, password)=>{
-    setLoading(true)
-    return createUserWithEmailAndPassword(auth, email, password)
-  }
-const updateUserPRofile=(name, photoUrl)=>{
-    setLoading(true)
-    return updateProfile(auth.currentUser,  {
+  const loginWithGoogle = () => {
+    setLoading(true);
+    return signInWithPopup(auth, provider);
+  };
+  const registerUser = (email, password) => {
+    setLoading(true);
+    return createUserWithEmailAndPassword(auth, email, password);
+  };
+  const updateUserPRofile = (name, photoUrl) => {
+   
+    return updateProfile(auth.currentUser, {
         displayName: name,
-        photoURL: photoUrl
-    })
-}
-const loginWithEmailPass=(email, password)=>{
-    setLoading(true)
-    return signInWithEmailAndPassword(auth, email, password)
-}
+        photoURL: photoUrl,
+      })
+  
+  };
+  const loginWithEmailPass = (email, password) => {
+    setLoading(true);
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
-const logoutUser = ()=>{
-    setLoading(true)
-    return signOut(auth)
-}
+  const logoutUser = () => {
+    setLoading(true);
+    return signOut(auth);
+  };
 
-const forgetPassword = (email)=>{
-    setLoading(true)
+  const forgetPassword = (email) => {
+    setLoading(true);
 
-    return sendPasswordResetEmail(auth, email)
-}
+    return sendPasswordResetEmail(auth, email);
+  };
+  const authInfo = {
+    loginWithGoogle,
+    registerUser,
+    user,
+    loading,
+    email,
+    setUser,
+    forgetPassword,
+    setEmail,
+    logoutUser,
+    updateUserPRofile,
+    loginWithEmailPass,
+  };
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+      console.log(currentUser);
+      setUser(currentUser);
+      setLoading(false);
+    });
 
-useEffect(()=>{
-    const unsubscribe = onAuthStateChanged(auth, currentUser=>{
-        // console.log(currentUser);
-        setLoading(false)
-        setUser(currentUser)
-    })
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
-    return ()=>{
-        unsubscribe()
-    }
-},[])
-    const authInfo = {
-        loginWithGoogle,
-        registerUser,
-        user,
-        loading,
-        email,
-        forgetPassword,
-        setEmail,
-        logoutUser,
-        updateUserPRofile,
-        loginWithEmailPass
-    }
-    return (
-        <AuthContext.Provider value={authInfo}>
-            {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+  );
 };
 
 export default AuthProvider;

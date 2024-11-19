@@ -28,7 +28,7 @@ const CategoryNav = () => {
       .then((res) => res.json())
       .then((data) => {
         const matchingData = data.filter((data) => data.category == category);
-        console.log(matchingData);
+        // console.log(matchingData);
         setServices(matchingData);
       });
   }, [category]);

@@ -5,9 +5,10 @@ import { AuthContext } from "../Providers/AuthProvider.jsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import ForgetPassword from "./ForgetPassword.jsx";
+import Swal from "sweetalert2";
 
 const Login = () => {
-  const { loginWithEmailPass, loginWithGoogle, setEmail } = useContext(AuthContext);
+  const { loginWithEmailPass, loginWithGoogle, setEmail, setUser } = useContext(AuthContext);
   const [hide, setHide] = useState(true);
   const [err, setErr] = useState("");
   
@@ -27,11 +28,22 @@ const Login = () => {
 
     loginWithEmailPass(email, password)
       .then((res) => {
-        console.log(res.user);
+        // console.log(res.user);
+        setUser(res.user)
+        Swal.fire({
+          icon: "success",
+          title: "Success..",
+          text: "Logged in!",
+        });
         navigate(location?.state  ? location.state : '/')
         e.target.reset();
       })
       .catch((err) => {
+        Swal.fire({
+          icon: "error",
+          title: "Incorrect password!",
+          text: `${err.message}, `,
+        });
         setErr(err.message);
       });
   };
@@ -39,10 +51,21 @@ const Login = () => {
   const handleGoogleSignUp = () => {
     loginWithGoogle()
       .then((res) => {
-          console.log(res.user);
+        Swal.fire({
+          icon: "success",
+          title: "Yess...",
+          text: "Logged in!",
+        });
+          // console.log(res.user);
+          setUser(res.user)
       })
       .catch((err) => {
         setErr(err.message);
+        Swal.fire({
+          icon: "error",
+          title: "Something went wrong!",
+          text: `${err.message}`,
+        });
       });
   };
   const handlePassShow = () => {
@@ -82,7 +105,7 @@ const Login = () => {
               {hide ? <BsEyeSlash /> : <BsEyeFill />}
             </div>
           </div>
-          <p className="text-2xl text-red-500 font-bold">{err}</p>
+          {/* <p className="text-2xl text-red-500 font-bold">{err}</p> */}
           <label className="label">
             <Link to='/forgetPassword' href="#" className="label-text-alt link link-hover">Forgot password?</Link>
           </label>
