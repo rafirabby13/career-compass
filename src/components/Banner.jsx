@@ -20,7 +20,7 @@ const Banner = () => {
   
 
   return (
-    <div className=" ">
+    <div className="pb-10">
       <Swiper
         // Include Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -33,8 +33,8 @@ const Banner = () => {
       >
         {/* Define individual slides */}
         <SwiperSlide className="">
-          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10">
-            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10 pt-10 lg:pt-0">
+            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4 ">
               <h2 className="text-lg lg:text-4xl font-bold">
                 Discover Your True Potential
               </h2>
@@ -49,14 +49,14 @@ const Banner = () => {
                 </Link>
               </div>
             </div>
-            <div className="">
-              <img className=" h-80  lg:h-[600px]  " src={s1} alt="" />
+            <div className="w-full">
+              <img className=" h-48 md:h-80 w-full  lg:h-[600px]  " src={s1} alt="" />
             </div>
           </div>
         </SwiperSlide>
-         <SwiperSlide>
-          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10">
-            <div className="text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
+          <SwiperSlide>
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10 pt-10 lg:pt-0">
+            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4 ">
               <h2 className="text-lg lg:text-4xl font-bold">
                 Your Path to Success Begins Here
               </h2>
@@ -71,14 +71,14 @@ const Banner = () => {
                 </Link>
               </div>
             </div>
-            <div className="">
-              <img className="h-80 lg:h-[600px]  " src={s2} alt="" />
+            <div className="w-full">
+              <img className=" h-48 md:h-80 w-full  lg:h-[600px]    " src={s2} alt="" />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10">
-            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10 pt-10 lg:pt-0">
+            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4 ">
               <h2 className="text-lg lg:text-4xl font-bold">
                 Make Informed Career Choices
               </h2>
@@ -93,11 +93,11 @@ const Banner = () => {
                 </Link>
               </div>
             </div>
-            <div className="">
-              <img className="h-80 lg:h-[600px]  " src={s3} alt="" />
+            <div className="w-full">
+              <img className=" h-48 md:h-80 w-full  lg:h-[600px]    " src={s3} alt="" />
             </div>
           </div>
-        </SwiperSlide> 
+        </SwiperSlide>  
       </Swiper>
     </div>
   );

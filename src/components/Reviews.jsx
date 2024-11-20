@@ -43,8 +43,8 @@ const Reviews = () => {
   };
 
   return (
-    <div className="">
-      <h1 className="text-xl lg:text-4xl font-bold border-b-[3px] lg:border-b-[5px] border-[#c3002f] shadow-md  lg:shadow-2xl p-2 lg:p-8 mb-4 lg:mb-20 text-center lg:text-start">
+    <div className=" pb-10 lg:pb-0">
+      <h1 className="text-xl md:text-3xl lg:text-4xl font-bold border-b-[3px] lg:border-b-[5px] border-[#c3002f] shadow-md  lg:shadow-2xl p-2 lg:p-8 mb-4 lg:mb-20 text-center lg:text-start">
         What Client Say's About Us..
       </h1>
       <div className="slider-container pb-20">

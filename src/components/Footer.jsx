@@ -81,11 +81,11 @@ const Footer = () => {
     <div className="bg-base-200 text-base-content pb-10 pt-4 lg:pt-20">
       <div className="w-fit mx-auto text-center space-y-5 ">
         <img className="w-fit mx-auto rounded-xl shadow-2xl animate__animated animate__swing animate__slow animate__delay-3s animate__infinite h-32  lg:h-60"  src={logo} alt="" />
-        <h1 className="text-2xl lg:text-4xl font-bold ">Career Compass</h1>
+        <h1 className="text-2xl lg:text-4xl font-bold py-10 ">Career Compass</h1>
       </div>
       <footer className=" py-4 lg:py-10 ">
 
-        <div className="flex flex-col lg:flex-row gap-10
+        <div className="flex flex-col md:flex-row gap-10
          justify-between max-w-[80%] mx-auto">
           <div className="flex flex-col">
             <h6 className="footer-title">Services</h6>
@@ -110,7 +110,7 @@ const Footer = () => {
         </div>
       </footer>
       <footer className="bg-base-200 text-base-content border-base-300 border-t  pt-10">
-        <div className="flex flex-col lg:flex-row gap-10 justify-between max-w-[80%] mx-auto">
+        <div className="flex flex-col md:flex-row gap-10 justify-between max-w-[80%] mx-auto">
           <aside className="grid-flow-col items-center">
             <p>
               Career Compass Ltd.

@@ -12,10 +12,10 @@ const Comment = () => {
     }
   };
   return (
-    <div>
+    <div className="py-20 lg:py-0">
       <form
         onSubmit={handleAddComment}
-        className="flex flex-col lg:flex-row items-center gap-5 justify-center py-8 lg:py-20 lg:w-2/4 mx-auto"
+        className="flex flex-col lg:flex-row items-center gap-5 justify-center py-8 lg:py-20 xl:w-3/4 mx-auto px-0 md:px-32 "
       >
         <img
           className="h-20 p-3 w-20 border-[7px]  rounded-full"
@@ -33,7 +33,7 @@ const Comment = () => {
         </button>
       </form>
       <div>
-        <div className=" lg:py-20 lg:w-2/4 mx-auto">
+        <div className=" lg:py-20 xl:w-3/4  mx-auto px-0 md:px-32">
           <h1 className="text-xl lg:text-3xl font-bold mb-5">Comments....</h1>
 
           <div className="flex flex-col gap-5">
