@@ -17,11 +17,11 @@ const Home = () => {
 
       </Helmet>
      <section className="lg:max-w-[85%] mx-auto">
-     {/* <Banner /> */}
+     <Banner />
       {/* <CategoryNav /> */}
-      {/* <Services /> */}
-      {/* <Feature/> */}
-      {/* <Reviews/> */}
+      <Services />
+      <Feature/>
+      <Reviews/>
      </section>
       
       <Outlet />
