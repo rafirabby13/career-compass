@@ -93,6 +93,10 @@ const Login = () => {
           </div>
 
           <div className="flex items-center relative">
+            <div className="form-control w-full">
+            <label className="label">
+              <span className="label-text">Password</span>
+            </label>
             <input
               type={hide ? "password" : "text"}
               name="password"
@@ -100,16 +104,17 @@ const Login = () => {
               className="input input-bordered w-full"
               required
             />
+            </div>
             <div
               onClick={handlePassShow}
-              className="text-2xl absolute right-3 cursor-pointer"
+              className="text-2xl absolute right-3 cursor-pointer top-12"
             >
               {!hide ? <BsEyeSlash /> : <BsEyeFill />}
             </div>
           </div>
           {/* <p className="text-2xl text-red-500 font-bold">{err}</p> */}
           <label className="label">
-            <Link to='/forgetPassword' href="#" className="label-text-alt link link-hover">Forgot password?</Link>
+            <Link to='/forgetPassword' href="#" className="label-text-alt link link-hover font-bold underline text-lg">Forgot password?</Link>
           </label>
           <div className="form-control mt-6">
             <button className="btn btn-primary bg-[#c3002f] text-white">Login</button>
