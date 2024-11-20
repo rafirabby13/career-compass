@@ -32,8 +32,8 @@ const Banner = () => {
         navigation
       >
         {/* Define individual slides */}
-        <SwiperSlide>
-          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0">
+        <SwiperSlide className="">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10">
             <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
               <h2 className="text-lg lg:text-4xl font-bold">
                 Discover Your True Potential
@@ -50,12 +50,12 @@ const Banner = () => {
               </div>
             </div>
             <div className="">
-              <img className="   lg:h-[600px]  " src={s1} alt="" />
+              <img className=" h-80  lg:h-[600px]  " src={s1} alt="" />
             </div>
           </div>
         </SwiperSlide>
          <SwiperSlide>
-          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10">
             <div className="text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
               <h2 className="text-lg lg:text-4xl font-bold">
                 Your Path to Success Begins Here
@@ -72,12 +72,12 @@ const Banner = () => {
               </div>
             </div>
             <div className="">
-              <img className="lg:h-[600px]  " src={s2} alt="" />
+              <img className="h-80 lg:h-[600px]  " src={s2} alt="" />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10">
             <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
               <h2 className="text-lg lg:text-4xl font-bold">
                 Make Informed Career Choices
@@ -94,7 +94,7 @@ const Banner = () => {
               </div>
             </div>
             <div className="">
-              <img className="lg:h-[600px]  " src={s3} alt="" />
+              <img className="h-80 lg:h-[600px]  " src={s3} alt="" />
             </div>
           </div>
         </SwiperSlide> 

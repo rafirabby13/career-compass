@@ -1,18 +1,18 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
-import logo from '../assets/logo (2).jpg'
+import logo from "../assets/logo (2).jpg";
 import Swal from "sweetalert2";
-
-
+import { HiBars3CenterLeft } from "react-icons/hi2";
+import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
-  const { user, logoutUser,loading } = useContext(AuthContext);
+  const [hide, setHide] = useState(true);
+  const { user, logoutUser, loading } = useContext(AuthContext);
   // console.log(user);
   if (loading) {
     return (
       <div className="min-h-screen flex justify-center gap-10">
-        
         <span className="loading loading-dots loading-lg"></span>
       </div>
     );
@@ -40,41 +40,61 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to="/" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>Home</NavLink>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "bg-[#c3002f] text-[#FFF0D1] font-bold" : ""
+          }
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/profile" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>My Profile</NavLink>
+        <NavLink
+          to="/profile"
+          className={({ isActive }) =>
+            isActive ? "bg-[#c3002f] text-[#FFF0D1] font-bold" : ""
+          }
+        >
+          My Profile
+        </NavLink>
       </li>
       <li>
-        <NavLink to="/about" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>About Us</NavLink>
+        <NavLink
+          to="/about"
+          className={({ isActive }) =>
+            isActive ? "bg-[#c3002f] text-[#FFF0D1] font-bold" : ""
+          }
+        >
+          About Us
+        </NavLink>
       </li>
     </>
   );
+
+  const handleHideShow = () => [setHide(!hide)];
   return (
-    <div className="navbar  bg-[#dff2eb2f] lg:max-w-[85%] mx-auto py-2 lg:py-10">
+    <div className="navbar  bg-[#dff2eb2f] lg:max-w-[85%] mx-auto py-3 lg:py-10 ">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className=" lg:hidden mr-1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-7 w-7"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+          <div tabIndex={0} role="button" className="z-50 lg:hidden mr-3">
+            <div onClick={handleHideShow} className="text-3xl">
+              {hide ? (
+                <div>
+                  <HiBars3CenterLeft />
+                </div>
+              ) : (
+                <div>
+                  <RxCross1 />
+                </div>
+              )}
+            </div>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className={`   ${hide ? '' : 'bg-base-100 menu menu-sm dropdown-content  rounded-box  mt-3 w-52 p-2  z-50 shadow'}`}
           >
-            {links}
+            {hide ? "" : links}
           </ul>
         </div>
         <div className="flex items-center gap-4">
@@ -94,7 +114,10 @@ const Navbar = () => {
       <div className="navbar-end">
         {user && user?.email ? (
           <div className="flex items-center gap-5">
-            <Link onClick={handleLogout} className="text-sm py-1 px-2 rounded-md lg:btn bg-[#c3002f] text-[#FFF0D1]">
+            <Link
+              onClick={handleLogout}
+              className="text-sm py-1 px-2 rounded-md lg:btn bg-[#c3002f] text-[#FFF0D1]"
+            >
               Logout
             </Link>
             <img
