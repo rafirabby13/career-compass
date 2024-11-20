@@ -21,7 +21,7 @@ const Subscribe = () => {
             <input
               type="text"
               placeholder="Type here"
-              className="input input-bordered w-full   lg:max-w-xs rounded-none bg-[#fffffffb] placeholder:text-xl placeholder:font-medium text-black outline-none"
+              className="input input-bordered w-full   rounded-none bg-[#fffffffb] placeholder:text-xl placeholder:font-medium text-black outline-none"
             />
           </div>
           <div className="w-1/3">

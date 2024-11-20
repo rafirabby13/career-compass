@@ -179,17 +179,17 @@ const Register = () => {
                 onClick={handlePassShow}
                 className="text-2xl absolute right-3 cursor-pointer"
               >
-                {hide ? <BsEyeSlash /> : <BsEyeFill />}
+                {!hide ? <BsEyeSlash /> : <BsEyeFill />}
               </div>
             </div>
           </div>
           {/* <p className="text-2xl text-red-500 font-bold">{err}</p> */}
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Register</button>
+            <button className="btn btn-primary bg-[#c3002f] text-white">Register</button>
           </div>
           <p className="py-2">
             Already have a account?{" "}
-            <Link className="text-lg text-green-600 underline" to="/login">
+            <Link className="text-lg text-[#c3002f] font-bold underline" to="/login">
               Login
             </Link>
           </p>
@@ -199,7 +199,7 @@ const Register = () => {
         <div className="divider divider-accent lg:py-10">OR</div>
         <button
           onClick={handleGoogleSignUp}
-          className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-green-600"
+          className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-[#c3002f] text-[#c3002f]"
         >
           Sign Up With Google
         </button>

@@ -104,7 +104,7 @@ const Login = () => {
               onClick={handlePassShow}
               className="text-2xl absolute right-3 cursor-pointer"
             >
-              {hide ? <BsEyeSlash /> : <BsEyeFill />}
+              {!hide ? <BsEyeSlash /> : <BsEyeFill />}
             </div>
           </div>
           {/* <p className="text-2xl text-red-500 font-bold">{err}</p> */}
@@ -112,11 +112,11 @@ const Login = () => {
             <Link to='/forgetPassword' href="#" className="label-text-alt link link-hover">Forgot password?</Link>
           </label>
           <div className="form-control mt-6">
-            <button className="btn btn-primary">Login</button>
+            <button className="btn btn-primary bg-[#c3002f] text-white">Login</button>
           </div>
           <p className="py-2">
             Don't have a account?{" "}
-            <Link className="text-lg text-green-600 underline" to="/register">
+            <Link className="text-lg text-[#c3002f]  font-bold  underline" to="/register">
               Register
             </Link>
           </p>
@@ -126,7 +126,7 @@ const Login = () => {
         <div className="divider divider-accent lg:py-10">Or</div>
         <button
           onClick={handleGoogleSignUp}
-          className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-green-600"
+          className="border-2 p-4 w-full font-bold text-lg rounded-lg border-[#c3002f] text-[#c3002f]"
         >
           Login With Google
         </button>

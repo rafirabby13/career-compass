@@ -71,8 +71,8 @@ const Navbar = () => {
       </li>
     </>
   );
-
-  const handleHideShow = () => [setHide(!hide)];
+const handleCross=()=>{setHide(true)}
+  const handleHideShow = () => {setHide(!hide)};
   return (
     <div className="navbar  bg-[#dff2eb2f] lg:max-w-[85%] mx-auto py-3 lg:py-10 ">
       <div className="navbar-start">
@@ -90,7 +90,7 @@ const Navbar = () => {
               )}
             </div>
           </div>
-          <ul
+          <ul onClick={handleCross}
             tabIndex={0}
             className={`   ${hide ? '' : 'bg-base-100 menu menu-sm dropdown-content  rounded-box  mt-3 w-52 p-2  z-50 shadow'}`}
           >
@@ -116,7 +116,7 @@ const Navbar = () => {
           <div className="flex items-center gap-5">
             <Link
               onClick={handleLogout}
-              className="text-sm py-1 px-2 rounded-md lg:btn bg-[#c3002f] text-[#FFF0D1]"
+              className="text-sm  rounded-md btn bg-[#c3002f] text-[#FFF0D1]"
             >
               Logout
             </Link>
