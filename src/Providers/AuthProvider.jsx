@@ -23,6 +23,7 @@ const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
   const [isUpdating, setUpdating] = useState(false);
+  const [comment, setComment] = useState([]);
 
   const provider = new GoogleAuthProvider();
 
@@ -84,7 +85,8 @@ const AuthProvider = ({ children }) => {
     setEmail,
     logoutUser,
     setUpdating,
-  
+    setComment,
+    comment,
     loginWithEmailPass,
   };
   useEffect(() => {

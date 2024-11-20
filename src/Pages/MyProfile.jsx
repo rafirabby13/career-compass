@@ -100,7 +100,7 @@ const MyProfile = () => {
             </div>
             {/* Save Button */}
             <div className="form-control mt-6">
-              <button className="btn bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <button className="btn bg-[#c3002f] text-white font-semibold py-2 px-4 rounded-md hover:bg-[#da2b53] focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 Save The Changes
               </button>
             </div>

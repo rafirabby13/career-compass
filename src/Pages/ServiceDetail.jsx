@@ -1,16 +1,15 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import user from "../assets/user.png";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
 import { Helmet } from "react-helmet";
+import Comment from "../components/Comment.jsx";
+import StarRatings from "react-star-ratings";
 const ServiceDetail = () => {
   const { id } = useParams();
   // console.log(id);
   const [service, setServices] = useState({});
-  const [comment, setComment] = useState([]);
-
-  
+  const { comment, setComment } = useContext(AuthContext);
 
   useEffect(() => {
     fetch("../data.json")
@@ -36,16 +35,9 @@ const ServiceDetail = () => {
     tags,
   } = service;
 
-  const handleAddComment = (e) => {
-    e.preventDefault();
-    if (e.target.comment.value.length > 0) {
-      setComment([...comment, e.target.comment.value]);
-      e.target.comment.value = "";
-    }
-  };
   return (
     <div className="min-h-screen">
-       <Helmet>
+      <Helmet>
         <title>Detail | Career Compass</title>
       </Helmet>
       <div className="max-w-4xl mx-auto p-10 bg-white shadow-lg rounded-lg border ">
@@ -87,8 +79,17 @@ const ServiceDetail = () => {
               <p className="text-gray-700">
                 <span className="font-semibold">Pricing:</span> ${pricing}
               </p>
-              <p className="text-gray-700">
-                <span className="font-semibold">Rating:</span> ⭐ {rating}
+              <p className="text-black flex items-center gap-3 ">
+                <span className="font-semibold">Rating:</span>
+                <StarRatings
+                  starRatedColor="orange"
+                  starHoverColor="red"
+                  rating={rating}
+
+                  starDimension="20px"
+                  starSpacing="1px"
+                />
+                {rating}
               </p>
             </div>
           </div>
@@ -101,7 +102,7 @@ const ServiceDetail = () => {
             {tags?.map((tag, index) => (
               <span
                 key={index}
-                className="bg-blue-100 text-blue-700 text-sm px-3 py-1 rounded-lg"
+                className="bg-[#c3002f] text-[#FBF8EF] text-sm px-4 py-2 rounded-lg"
               >
                 {tag}
               </span>
@@ -110,31 +111,7 @@ const ServiceDetail = () => {
         </div>
       </div>
 
-      <form
-        onSubmit={handleAddComment}
-        className="flex items-center gap-5 justify-center py-20 w-2/4 mx-auto"
-      >
-        <img className="h-12" src={user} alt="" />
-        <input
-          type="text"
-          name="comment"
-          placeholder="Comment here"
-          className="input input-bordered w-full "
-        />
-        <button className="btn bg-[#c3002f] text-gray-100">Comment</button>
-      </form>
-
-      <div className=" py-20 w-2/4 mx-auto">
-        <h1 className="text-3xl font-bold mb-5">Comments....</h1>
-
-        <div>
-          {comment?.map((comment, index) => (
-            <p key={index}>
-              {index + 1}. {comment}
-            </p>
-          ))}
-        </div>
-      </div>
+      <Comment />
     </div>
   );
 };
