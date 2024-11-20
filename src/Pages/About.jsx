@@ -5,7 +5,7 @@ import Team from "../components/Team.jsx";
 
 const About = () => {
   return (
-    <div className="max-w-[80%] mx-auto">
+    <div className="lg:max-w-[80%] mx-auto">
       <Helmet>
         <title>About | Career Compass</title>
       </Helmet>

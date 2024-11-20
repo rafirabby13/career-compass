@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../Providers/AuthProvider.jsx";
-import logo from "../assets/logo.jpg";
+import logo from '../assets/logo (2).jpg'
 import Swal from "sweetalert2";
 
 
@@ -51,13 +51,13 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar  bg-[#dff2eb2f] max-w-[85%] mx-auto py-10">
+    <div className="navbar  bg-[#dff2eb2f] lg:max-w-[85%] mx-auto py-2 lg:py-10">
       <div className="navbar-start">
         <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+          <div tabIndex={0} role="button" className=" lg:hidden mr-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-7 w-7"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -79,11 +79,11 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
           <img
-            className="h-16 w-16 animate__animated animate__flip animate__slow animate__delay-3s animate__infinite rounded-full"
+            className="h-16 w-16 animate__animated animate__flip animate__slow animate__delay-3s animate__infinite rounded-full hidden lg:flex"
             src={logo}
             alt=""
           />
-          <Link to="/" className="font-bold text-2xl ">
+          <Link to="/" className="font-bold text-sm lg:text-2xl ">
             Career Compass
           </Link>
         </div>
@@ -94,11 +94,11 @@ const Navbar = () => {
       <div className="navbar-end">
         {user && user?.email ? (
           <div className="flex items-center gap-5">
-            <Link onClick={handleLogout} className="btn bg-[#c3002f] text-[#FFF0D1]">
+            <Link onClick={handleLogout} className="text-sm py-1 px-2 rounded-md lg:btn bg-[#c3002f] text-[#FFF0D1]">
               Logout
             </Link>
             <img
-              className={`h-16 w-16 rounded-full `}
+              className={`h-10 w-10 lg:h-16 lg:w-16 rounded-full `}
               src={`${user?.photoURL}`}
               title={user?.displayName}
               alt={user?.displayName}

@@ -16,27 +16,9 @@ import "swiper/css/scrollbar";
 import { Link } from "react-router-dom";
 
 const Banner = () => {
-  //   const swiper = new Swiper(".swiper", {
-  //     // Optional parameters
-  //     direction: "vertical",
-  //     loop: true,
+  
+  
 
-  //     // If we need pagination
-  //     pagination: {
-  //       el: ".swiper-pagination",
-  //     },
-
-  //     // Navigation arrows
-  //     navigation: {
-  //       nextEl: ".swiper-button-next",
-  //       prevEl: ".swiper-button-prev",
-  //     },
-
-  //     // And if we need scrollbar
-  //     scrollbar: {
-  //       el: ".swiper-scrollbar",
-  //     },
-  //   });
   return (
     <div className=" ">
       <Swiper
@@ -51,71 +33,71 @@ const Banner = () => {
       >
         {/* Define individual slides */}
         <SwiperSlide>
-          <div className="flex items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
-            <div className="  w-2/5    pl-16 pr-8 space-y-4">
-              <h2 className="text-4xl font-bold">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0">
+            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
+              <h2 className="text-lg lg:text-4xl font-bold">
                 Discover Your True Potential
               </h2>
-              <p className="text-lg">
+              <p className="text-sm lg:text-lg">
                 Personalized career guidance to help you unlock your dreams.
               </p>
               <div>
                 <Link >
-                  <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold py-2 px-4 rounded-lg hover:bg-indigo-100 transition duration-300">
+                  <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold lg:py-2 lg:px-4 p-2 text-sm lg:text-xl rounded-lg hover:bg-indigo-100 transition duration-300">
                     Get Started Today
                   </button>
                 </Link>
               </div>
             </div>
             <div className="">
-              <img className="h-[600px]  " src={s1} alt="" />
+              <img className="   lg:h-[600px]  " src={s1} alt="" />
             </div>
           </div>
         </SwiperSlide>
-        <SwiperSlide>
-          <div className="flex items-center h-full bg-gradient-to-r from-[#DE7C7D]/20 via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
-            <div className="  w-2/5    pl-16 pr-8 space-y-4">
-              <h2 className="text-4xl font-bold">
+         <SwiperSlide>
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0">
+            <div className="text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
+              <h2 className="text-lg lg:text-4xl font-bold">
                 Your Path to Success Begins Here
               </h2>
-              <p className="text-lg">
+              <p className="text-sm lg:text-lg">
                 Expert advice and resources tailored to your aspirations.
               </p>
               <div>
                 <Link >
-                  <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold py-2 px-4 rounded-lg hover:bg-indigo-100 transition duration-300">
+                  <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold lg:py-2 lg:px-4 p-2 text-sm lg:text-xl rounded-lg hover:bg-indigo-100 transition duration-300">
                     Get Started Today
                   </button>
                 </Link>
               </div>
             </div>
             <div className="">
-              <img className="h-[600px]  " src={s2} alt="" />
+              <img className="lg:h-[600px]  " src={s2} alt="" />
             </div>
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
-            <div className="  w-2/5   pl-16 pr-8 space-y-4">
-              <h2 className="text-4xl font-bold">
+          <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0">
+            <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4">
+              <h2 className="text-lg lg:text-4xl font-bold">
                 Make Informed Career Choices
               </h2>
-              <p className="text-lg">
+              <p className="text-sm lg:text-lg">
                 We provide the tools to help you thrive in your chosen field.
               </p>
               <div>
                 <Link >
-                  <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold py-2 px-4 rounded-lg hover:bg-indigo-100 transition duration-300">
+                  <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold lg:py-2 lg:px-4 p-2 text-sm lg:text-xl rounded-lg hover:bg-indigo-100 transition duration-300">
                     Get Started Today
                   </button>
                 </Link>
               </div>
             </div>
-            <div className="w-/2">
-              <img className="h-[600px]  " src={s3} alt="" />
+            <div className="">
+              <img className="lg:h-[600px]  " src={s3} alt="" />
             </div>
           </div>
-        </SwiperSlide>
+        </SwiperSlide> 
       </Swiper>
     </div>
   );

@@ -16,12 +16,12 @@ const Home = () => {
         <title>Home | Career Compass</title>
 
       </Helmet>
-     <section className="max-w-[85%] mx-auto">
-     <Banner />
+     <section className="lg:max-w-[85%] mx-auto">
+     {/* <Banner /> */}
       {/* <CategoryNav /> */}
-      <Services />
-      <Feature/>
-      <Reviews/>
+      {/* <Services /> */}
+      {/* <Feature/> */}
+      {/* <Reviews/> */}
      </section>
       
       <Outlet />

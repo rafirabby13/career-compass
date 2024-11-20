@@ -17,27 +17,43 @@ const Reviews = () => {
       });
   }, []);
   const settings = {
-  
     infinite: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
     autoplaySpeed: 1000,
-    cssEase: "ease"
+    cssEase: "ease",
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
+
   return (
     <div className="">
-        <h1 className="text-5xl font-bold border-b-[5px] border-[#DE7C7D] shadow-xl p-8   mb-20 ">What Client Say's About Us..</h1>
-     <div className="slider-container pb-20">
-     <Slider {...settings} className="h-full">
-        
+      <h1 className="text-xl lg:text-4xl font-bold border-b-[3px] lg:border-b-[5px] border-[#c3002f] shadow-md  lg:shadow-2xl p-2 lg:p-8 mb-4 lg:mb-20 text-center lg:text-start">
+        What Client Say's About Us..
+      </h1>
+      <div className="slider-container pb-20">
+        <Slider {...settings} className="h-full ">
           {reviews.map((review) => (
             <ReviewCard key={review.id} review={review}></ReviewCard>
           ))}
-      
-      </Slider>
-     </div>
+        </Slider>
+      </div>
     </div>
   );
 };

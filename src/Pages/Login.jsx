@@ -75,7 +75,7 @@ const Login = () => {
     // console.log(email);
   };
   return (
-    <div className="max-w-lg mx-auto py-20">
+    <div className="max-w-lg mx-auto lg:py-20 py-10">
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">
@@ -123,12 +123,12 @@ const Login = () => {
         </form>
       </div>
       <div className="">
-        <div className="divider divider-accent py-10">Or</div>
+        <div className="divider divider-accent lg:py-10">Or</div>
         <button
           onClick={handleGoogleSignUp}
           className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-green-600"
         >
-          Sign Up With Google
+          Login With Google
         </button>
       </div>
     

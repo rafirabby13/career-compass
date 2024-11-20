@@ -124,7 +124,7 @@ const Register = () => {
     // console.log(hide);
   };
   return (
-    <div className="max-w-lg mx-auto ">
+    <div className="max-w-lg mx-auto pb-20 lg:pb-0">
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">
@@ -196,7 +196,7 @@ const Register = () => {
         </form>
       </div>
       <div className="">
-        <div className="divider divider-accent py-10">OR</div>
+        <div className="divider divider-accent lg:py-10">OR</div>
         <button
           onClick={handleGoogleSignUp}
           className="border-2 p-4 w-full font-bold text-lg rounded-lg bg-slate-100 border-green-600"

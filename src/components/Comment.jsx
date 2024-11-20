@@ -15,20 +15,26 @@ const Comment = () => {
     <div>
       <form
         onSubmit={handleAddComment}
-        className="flex items-center gap-5 justify-center py-20 w-2/4 mx-auto"
+        className="flex flex-col lg:flex-row items-center gap-5 justify-center py-8 lg:py-20 lg:w-2/4 mx-auto"
       >
-        <img className="h-20 p-3 w-20 border-[7px]  rounded-full" src={user2} alt="" />
+        <img
+          className="h-20 p-3 w-20 border-[7px]  rounded-full"
+          src={user2}
+          alt=""
+        />
         <input
           type="text"
           name="comment"
           placeholder="Comment here"
           className="input input-bordered w-full "
         />
-        <button className="btn bg-[#c3002f] text-gray-100">Comment</button>
+        <button className="btn bg-[#c3002f] text-gray-100 w-full lg:w-fit">
+          Comment
+        </button>
       </form>
       <div>
-        <div className=" py-20 w-2/4 mx-auto">
-          <h1 className="text-3xl font-bold mb-5">Comments....</h1>
+        <div className=" lg:py-20 lg:w-2/4 mx-auto">
+          <h1 className="text-xl lg:text-3xl font-bold mb-5">Comments....</h1>
 
           <div className="flex flex-col gap-5">
             {comment?.map((comment, index) => (
@@ -39,10 +45,8 @@ const Comment = () => {
                   alt=""
                 />
                 <div className="text-xl">
-                    <p className="font-bold ">{user.email}</p>
-                <p>
-                   {comment}
-                </p>
+                  <p className="font-bold ">{user.email}</p>
+                  <p className="text-sm lg:text-xl">{comment}</p>
                 </div>
               </div>
             ))}

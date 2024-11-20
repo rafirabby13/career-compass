@@ -44,15 +44,15 @@ const MyProfile = () => {
   };
   
   return (
-    <div className="min-h-screen max-w-[80%] mx-auto pb-20">
+    <div className="min-h-screen lg:max-w-[80%] mx-auto pb-20">
       <Helmet>
         <title>Profile | Career Compass</title>
       </Helmet>
       
 
-      <div className="text-center space-y-6 px-6 py-16 bg-[#FAF6E3] rounded-lg shadow-lg">
+      <div className="text-center space-y-6 lg:px-6 py-4 lg:py-16 bg-[#FAF6E3] rounded-lg shadow-lg">
         {/* Welcome Section */}
-        <h2 className="font-bold text-4xl text-[#c3002f]">
+        <h2 className="font-bold text-xl lg:text-4xl text-[#c3002f]">
           Welcome, {displayName}!
         </h2>
         <img
@@ -60,10 +60,10 @@ const MyProfile = () => {
           alt="User Profile"
           className="rounded-full w-48 h-48 border-4 border-indigo-500 mx-auto"
         />
-        <p className="text-2xl text-[#c3002f] font-medium">Email: {user.email}</p>
+        <p className="text-xl lg:text-2xl text-[#c3002f] font-medium">Email: {user.email}</p>
 
         {/* Edit Profile Section */}
-        <h3 className="font-bold text-4xl text-black mt-6">
+        <h3 className="font-bold text-2xl lg:text-4xl text-black mt-6">
           Edit Your Profile
         </h3>
         <div className="card bg-white shadow-md w-full max-w-md mx-auto my-10 rounded-lg">

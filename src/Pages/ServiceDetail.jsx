@@ -40,7 +40,7 @@ const ServiceDetail = () => {
       <Helmet>
         <title>Detail | Career Compass</title>
       </Helmet>
-      <div className="max-w-4xl mx-auto p-10 bg-white shadow-lg rounded-lg border ">
+      <div className="max-w-4xl mx-auto p-2 lg:p-10 bg-white shadow-lg rounded-lg border ">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row items-start gap-6">
           <img
