@@ -8,7 +8,7 @@ import ForgetPassword from "./ForgetPassword.jsx";
 import Swal from "sweetalert2";
 
 const Login = () => {
-  const { loginWithEmailPass, loginWithGoogle, setEmail, setUser } = useContext(AuthContext);
+  const { loginWithEmailPass, loginWithGoogle, setEmail, setUser, setUpdating } = useContext(AuthContext);
   const [hide, setHide] = useState(true);
   const [err, setErr] = useState("");
   
@@ -51,6 +51,7 @@ const Login = () => {
   const handleGoogleSignUp = () => {
     loginWithGoogle()
       .then((res) => {
+        setUpdating((prev)=>!prev)
         navigate(location?.state ? location.state : "/");
         Swal.fire({
           icon: "success",

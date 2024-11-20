@@ -43,7 +43,7 @@ const Navbar = () => {
         <NavLink to="/" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>Home</NavLink>
       </li>
       <li>
-        <NavLink to="/profile" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>My Profile</NavLink>
+        <NavLink to="/profile" className={({isActive})=> isActive ? 'bg-[#ee0c40] text-[#FFF0D1] font-bold' : ''}>My Profile</NavLink>
       </li>
       <li>
         <NavLink to="/about" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>About Us</NavLink>
@@ -51,7 +51,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar bg-base-100 max-w-[85%] mx-auto py-10">
+    <div className="navbar  bg-[#dff2eb2f] max-w-[85%] mx-auto py-10">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

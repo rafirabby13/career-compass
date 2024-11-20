@@ -15,19 +15,22 @@ const ServiceCard = ({ service }) => {
         />
       </div>
 
-      {/* Content */}
       <div className="space-y-2">
         <h2 className="text-xl font-bold">{service_name}</h2>
-        <p className=" text-lg">Category: {category}</p>
-        <p className=" text-lg">Price: {pricing}</p>
-        <p className="font-semibold text-lg">Counselor: {counselor}</p>
+        <p className=" text-xl font-medium">Category: {category}</p>
+        <p className=" text-xl">Price: {pricing} $</p>
+        <p className="font-medium text-xl">Counselor: {counselor}</p>
 
-        {/* Button serviceDetail */}
-        <button className="">
-          <Link to={`/serviceDetail/${id}`} className=" bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition duration-300">
+       <div className="my-10  py-4">
+       <button >
+          <Link
+            to={`/serviceDetail/${id}`}
+            className=" bg-[#c3002f] text-[#FFF0D1] px-4 py-2 rounded hover:bg-[#930123] transition duration-300"
+          >
             Learn More
           </Link>
         </button>
+       </div>
       </div>
     </div>
   );

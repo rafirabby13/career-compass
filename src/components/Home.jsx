@@ -18,7 +18,7 @@ const Home = () => {
       </Helmet>
      <section className="max-w-[85%] mx-auto">
      <Banner />
-      <CategoryNav />
+      {/* <CategoryNav /> */}
       <Services />
       <Feature/>
       <Reviews/>

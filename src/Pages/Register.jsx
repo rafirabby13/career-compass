@@ -100,6 +100,7 @@ const Register = () => {
     loginWithGoogle()
       .then((res) => {
         // console.log(res.user);
+        setUpdating((prev)=>!prev)
         setUser(res.user);
         navigate(location?.state ? location.state : "/");
         Swal.fire({

@@ -14,7 +14,7 @@ const Services = () => {
         })
     },[])
     return (
-        <div className="">
+        <div className=" pt-20">
             <div className="grid grid-cols-3 gap-5">
                 {
                     services.map(service=><ServiceCard
