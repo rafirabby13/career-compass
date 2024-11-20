@@ -12,9 +12,9 @@ import {
   signOut,
   updateProfile,
 } from "firebase/auth";
-import app from "../Firebase/Firebase.init.js";
+import auth from "../Firebase/Firebase.init.js";
 
-export const auth = getAuth(app);
+
 
 export const AuthContext = createContext(null);
 
@@ -22,6 +22,7 @@ const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [email, setEmail] = useState("");
+  const [isUpdating, setUpdating] = useState(false);
 
   const provider = new GoogleAuthProvider();
 
@@ -33,14 +34,30 @@ const AuthProvider = ({ children }) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
-  const updateUserPRofile = (name, photoUrl) => {
+//   const updateUserPRofile = async (name, photoUrl) => {
    
-    return updateProfile(auth.currentUser, {
-        displayName: name,
-        photoURL: photoUrl,
-      })
+//     return updateProfile(auth.currentUser, {
+//         displayName: name,
+//         photoURL: photoUrl,
+//       })
+//     //   .then(()=>{
+//     //     // setUser({  ...auth.currentUser,
+//     //     //     displayName: name,
+//     //     //     photoURL: photoUrl,})
+//     //     setUser((prev)=>{
+
+//     //         return {
+//     //             ...prev,
+//     //             displayName: name,
+//     //             photoURL: photoUrl
+//     //         }
+//     //     })
+//         // setUpdating((prev)=> !prev)
+//         // console.log(user.currentUser);
+//     //   }
+//     // )
   
-  };
+//   };
   const loginWithEmailPass = (email, password) => {
     setLoading(true);
     return signInWithEmailAndPassword(auth, email, password);
@@ -66,7 +83,8 @@ const AuthProvider = ({ children }) => {
     forgetPassword,
     setEmail,
     logoutUser,
-    updateUserPRofile,
+    setUpdating,
+  
     loginWithEmailPass,
   };
   useEffect(() => {
@@ -79,7 +97,7 @@ const AuthProvider = ({ children }) => {
     return () => {
       unsubscribe();
     };
-  }, []);
+  }, [isUpdating]);
 
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>

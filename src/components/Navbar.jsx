@@ -7,8 +7,16 @@ import Swal from "sweetalert2";
 
 
 const Navbar = () => {
-  const { user, logoutUser } = useContext(AuthContext);
+  const { user, logoutUser,loading } = useContext(AuthContext);
   // console.log(user);
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center gap-10">
+        
+        <span className="loading loading-dots loading-lg"></span>
+      </div>
+    );
+  }
 
   const handleLogout = () => {
     logoutUser()
@@ -91,7 +99,7 @@ const Navbar = () => {
             </Link>
             <img
               className={`h-16 w-16 rounded-full `}
-              src={user?.photoURL}
+              src={`${user?.photoURL}`}
               title={user?.displayName}
               alt={user?.displayName}
             />

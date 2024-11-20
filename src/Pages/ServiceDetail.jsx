@@ -121,7 +121,7 @@ const ServiceDetail = () => {
           placeholder="Comment here"
           className="input input-bordered w-full "
         />
-        <button className="btn">Comment</button>
+        <button className="btn bg-[#c3002f] text-gray-100">Comment</button>
       </form>
 
       <div className=" py-20 w-2/4 mx-auto">

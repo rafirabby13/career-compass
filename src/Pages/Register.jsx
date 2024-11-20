@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
 import { useContext, useState } from "react";
-import { auth, AuthContext } from "../Providers/AuthProvider.jsx";
+import {  AuthContext } from "../Providers/AuthProvider.jsx";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import Swal from "sweetalert2";
+import auth from "../Firebase/Firebase.init.js";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
   const [err, setErr] = useState("");
   const [hide, setHide] = useState(true);
-  const { registerUser, updateUserPRofile, loginWithGoogle, setUser } =
+  const { registerUser, updateUserPRofile, loginWithGoogle, setUser, setUpdating } =
     useContext(AuthContext);
 
   const navigate = useNavigate();
@@ -33,12 +35,13 @@ const Register = () => {
               console.log(res.user);
 
               // setUser(res.user);
-              updateUserPRofile(displayName, photoURL)
+              updateProfile(auth.currentUser, {
+                displayName: displayName,
+                photoURL: photoURL,
+              })
                 .then((res) => {
-                  const updatedUser = auth.currentUser;
-                  console.log(updatedUser);
-                  auth.currentUser.reload();
-                  setUser(updatedUser);
+                console.log(res);
+                setUpdating((prev)=>!prev)
 
                   e.target.reset();
                   Swal.fire({
@@ -49,7 +52,7 @@ const Register = () => {
                   navigate(location?.state ? location.state : "/");
                 })
                 .catch((err) => {
-                  // console.log(err.message);
+                  console.log(err.message);
                   Swal.fire({
                     icon: "error",
                     title: "Something went wrong!",
@@ -59,7 +62,7 @@ const Register = () => {
                 });
             })
             .catch((err) => {
-              // console.log(err.message);
+              console.log(err.message);
               Swal.fire({
                 icon: "error",
                 title: "Something went wrong!",
@@ -98,6 +101,7 @@ const Register = () => {
       .then((res) => {
         // console.log(res.user);
         setUser(res.user);
+        navigate(location?.state ? location.state : "/");
         Swal.fire({
           icon: "success",
           title: "Yess...",
@@ -105,7 +109,7 @@ const Register = () => {
         });
       })
       .catch((err) => {
-        // console.log(err.message);
+        console.log(err.message);
         Swal.fire({
           icon: "error",
           title: "Something went wrong!",

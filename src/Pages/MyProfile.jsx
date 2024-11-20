@@ -1,29 +1,39 @@
 /* eslint-disable no-unused-vars */
 import { useContext } from "react";
-import { auth, AuthContext } from "../Providers/AuthProvider.jsx";
+import {  AuthContext } from "../Providers/AuthProvider.jsx";
 import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
+import auth from "../Firebase/Firebase.init.js";
+import { updateProfile } from "firebase/auth";
 
 const MyProfile = () => {
-  const { user, updateUserPRofile , setUser} = useContext(AuthContext);
+  const { user, updateUserPRofile, setUser,loading, setUpdating } = useContext(AuthContext);
+  const navigate = useNavigate();
 
+  if (loading) {
+    return (
+      <div className="min-h-screen flex justify-center gap-10">
+        
+        <span className="loading loading-dots loading-lg"></span>
+      </div>
+    );
+  }
   const { displayName, email, photoURL, uid } = user;
 
-  const navigate = useNavigate();
 
   const handleProfileUpdate = async (e) => {
     e.preventDefault();
 
     const displayName = e.target.name.value;
     const photoURL = e.target.photoURL.value;
-    await updateUserPRofile(displayName, photoURL)
+    await  updateProfile(auth.currentUser, {
+      displayName: displayName,
+      photoURL: photoURL,
+    })
       .then((res) => {
         navigate("/");
-        console.log("updated");
-        auth.currentUser.reload()
-        const updatedUser = auth.currentUser;
-        console.log(updatedUser);
-        setUser(updatedUser)
+        setUpdating((prev)=>!prev)
+        e.target.reset();
         // ...
       })
       .catch((error) => {
@@ -32,49 +42,67 @@ const MyProfile = () => {
         console.log(error.message);
       });
   };
+  
   return (
     <div className="min-h-screen max-w-[80%] mx-auto pb-20">
       <Helmet>
         <title>Profile | Career Compass</title>
       </Helmet>
-      <div className="text-center space-y-4">
-        <h2 className="font-semibold text-3xl">Welcome, {displayName}!</h2>
+      
+
+      <div className="text-center space-y-6 p-6 bg-gray-50 rounded-lg shadow-lg">
+        {/* Welcome Section */}
+        <h2 className="font-bold text-4xl text-indigo-600">
+          Welcome, {displayName}!
+        </h2>
         <img
           src={photoURL}
           alt="User Profile"
-          className="rounded-full mx-auto h-[300px]"
+          className="rounded-full w-32 h-32 border-4 border-indigo-500 mx-auto"
         />
-        <p>Email: {user.email}</p>
+        <p className="text-lg text-gray-700 font-medium">Email: {user.email}</p>
 
-        <h3 className="font-semibold text-3xl">Edit Your Profile</h3>
-        <div className="card bg-base-100 w-full max-w-md mx-auto my-10 shrink-0 shadow-2xl">
-          <form className="card-body" onSubmit={handleProfileUpdate}>
+        {/* Edit Profile Section */}
+        <h3 className="font-semibold text-2xl text-gray-800 mt-6">
+          Edit Your Profile
+        </h3>
+        <div className="card bg-white shadow-md w-full max-w-md mx-auto my-10 rounded-lg">
+          <form className="card-body space-y-4" onSubmit={handleProfileUpdate}>
+            {/* Name Input */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Name</span>
+                <span className="label-text text-gray-700 font-medium">
+                  Name
+                </span>
               </label>
               <input
                 type="text"
                 name="name"
                 placeholder="Your Name"
-                className="input input-bordered"
+                className="input input-bordered w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 required
               />
             </div>
+            {/* Photo URL Input */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">PhotoURL</span>
+                <span className="label-text text-gray-700 font-medium">
+                  Photo URL
+                </span>
               </label>
               <input
                 type="text"
                 name="photoURL"
                 placeholder="Your Photo URL"
-                className="input input-bordered"
+                className="input input-bordered w-full px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 required
               />
             </div>
+            {/* Save Button */}
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Save The Changes</button>
+              <button className="btn bg-indigo-600 text-white font-semibold py-2 px-4 rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                Save The Changes
+              </button>
             </div>
           </form>
         </div>

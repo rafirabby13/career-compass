@@ -51,6 +51,7 @@ const Login = () => {
   const handleGoogleSignUp = () => {
     loginWithGoogle()
       .then((res) => {
+        navigate(location?.state ? location.state : "/");
         Swal.fire({
           icon: "success",
           title: "Yess...",
