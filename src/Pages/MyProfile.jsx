@@ -50,20 +50,20 @@ const MyProfile = () => {
       </Helmet>
       
 
-      <div className="text-center space-y-6 p-6 bg-gray-50 rounded-lg shadow-lg">
+      <div className="text-center space-y-6 px-6 py-16 bg-[#FAF6E3] rounded-lg shadow-lg">
         {/* Welcome Section */}
-        <h2 className="font-bold text-4xl text-indigo-600">
+        <h2 className="font-bold text-4xl text-[#c3002f]">
           Welcome, {displayName}!
         </h2>
         <img
           src={photoURL}
           alt="User Profile"
-          className="rounded-full w-32 h-32 border-4 border-indigo-500 mx-auto"
+          className="rounded-full w-48 h-48 border-4 border-indigo-500 mx-auto"
         />
-        <p className="text-lg text-gray-700 font-medium">Email: {user.email}</p>
+        <p className="text-2xl text-[#c3002f] font-medium">Email: {user.email}</p>
 
         {/* Edit Profile Section */}
-        <h3 className="font-semibold text-2xl text-gray-800 mt-6">
+        <h3 className="font-bold text-4xl text-black mt-6">
           Edit Your Profile
         </h3>
         <div className="card bg-white shadow-md w-full max-w-md mx-auto my-10 rounded-lg">

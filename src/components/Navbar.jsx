@@ -43,7 +43,7 @@ const Navbar = () => {
         <NavLink to="/" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>Home</NavLink>
       </li>
       <li>
-        <NavLink to="/profile" className={({isActive})=> isActive ? 'bg-[#ee0c40] text-[#FFF0D1] font-bold' : ''}>My Profile</NavLink>
+        <NavLink to="/profile" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>My Profile</NavLink>
       </li>
       <li>
         <NavLink to="/about" className={({isActive})=> isActive ? 'bg-[#c3002f] text-[#FFF0D1] font-bold' : ''}>About Us</NavLink>
