@@ -51,7 +51,7 @@ const Banner = () => {
       >
         {/* Define individual slides */}
         <SwiperSlide>
-          <div className="flex items-center h-full bg-gradient-to-r from-blue-500/20 via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
+          <div className="flex items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
             <div className="  w-2/5    pl-16 pr-8 space-y-4">
               <h2 className="text-4xl font-bold">
                 Discover Your True Potential
@@ -60,7 +60,7 @@ const Banner = () => {
                 Personalized career guidance to help you unlock your dreams.
               </p>
               <div>
-                <Link to="/login">
+                <Link >
                   <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold py-2 px-4 rounded-lg hover:bg-indigo-100 transition duration-300">
                     Get Started Today
                   </button>
@@ -73,7 +73,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex items-center h-full bg-gradient-to-r from-blue-500/20 via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
+          <div className="flex items-center h-full bg-gradient-to-r from-[#DE7C7D]/20 via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
             <div className="  w-2/5    pl-16 pr-8 space-y-4">
               <h2 className="text-4xl font-bold">
                 Your Path to Success Begins Here
@@ -82,7 +82,7 @@ const Banner = () => {
                 Expert advice and resources tailored to your aspirations.
               </p>
               <div>
-                <Link to="/login">
+                <Link >
                   <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold py-2 px-4 rounded-lg hover:bg-indigo-100 transition duration-300">
                     Get Started Today
                   </button>
@@ -95,7 +95,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <div className="flex items-center h-full bg-gradient-to-r from-blue-500/20 via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
+          <div className="flex items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between">
             <div className="  w-2/5   pl-16 pr-8 space-y-4">
               <h2 className="text-4xl font-bold">
                 Make Informed Career Choices
@@ -104,7 +104,7 @@ const Banner = () => {
                 We provide the tools to help you thrive in your chosen field.
               </p>
               <div>
-                <Link to="/login">
+                <Link >
                   <button className="bg-[#c3002f] text-[#FFF0D1] font-semibold py-2 px-4 rounded-lg hover:bg-indigo-100 transition duration-300">
                     Get Started Today
                   </button>

@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import React from "react";
-import { AiFillStar, AiOutlineStar } from "react-icons/ai";
-import Slider from "react-slick";
+
+import ReactStars from "react-rating-stars-component";
+import StarRatings from "react-star-ratings";
 
 const ReviewCard = ({ review }) => {
   const { name, profession, feedback, rating, image } = review;
 
   return (
-    <div className="p-10   shadow-md rounded-lg max-w-sm bg-slate-100 flex flex-col justify-between h-full">
+    <div className="p-10   shadow-md rounded-lg max-w-sm bg-slate-100 flex flex-col justify-between h-[300px]">
       <div className="flex items-center gap-4">
         <img
           className="h-16 w-16 rounded-full"
@@ -16,23 +16,23 @@ const ReviewCard = ({ review }) => {
           alt={`${name}'s profile`}
         />
         <div>
-          <h2 className="font-bold text-lg">{name}</h2>
-          <p className="text-blue-500">{profession}</p>
+          <h2 className="font-bold text-xl">{name}</h2>
+          <p className="text-blue-500 font-bold text-xl">{profession}</p>
         </div>
       </div>
 
       <div>
-        <p className="mt-4 text-gray-600">{feedback}</p>
+        <p className="mt-4 font-medium text-xl text-gray-600">{feedback}</p>
       </div>
 
-      <div className="mt-auto flex items-center">
-        {Array.from({ length: 5 }, (_, i) =>
-          i < rating ? (
-            <AiFillStar key={i} className="text-yellow-500" />
-          ) : (
-            <AiOutlineStar key={i} className="text-yellow-500" />
-          )
-        )}
+      <div className=" flex items-center ">
+        <StarRatings
+          starRatedColor="orange"
+          starHoverColor="red"
+          rating={rating}
+          starDimension="30px"
+          starSpacing="5px"
+        />
       </div>
     </div>
   );

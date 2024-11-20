@@ -14,18 +14,18 @@ const Feature = () => {
     const {user} = useContext(AuthContext)
 
 
-
+   
   return (
-    <div className="py-40">
-        <h1 className="text-5xl font-bold border-b-[5px] border-green-400 mb-5 w-fit  ">Feature</h1>
+    <div className="py-20">
+        <h1 className="text-5xl font-bold border-b-[5px] border-[#DE7C7D]  shadow-2xl p-8 mb-20  ">Feature</h1>
         <div className="flex gap-20 items-center justify-between  ">
       <div className="w-1/2 relative">
         <img  src={lady} alt="Career Guidance Icon" />
         <img className="hidden lg:flex absolute -bottom-20 -left-20 shadow-2xl rounded-xl  h-60 animate__animated animate__pulse animate__fast animate__delay-3s animate__infinite "  src={career} alt="Career Growth Icon" />
         <img className=" hidden lg:flex absolute -top-20 -right-10  shadow-2xl rounded-xl   h-60 animate__animated animate__pulse animate__fast animate__delay-3s animate__infinite"   src={success} alt="Success Icon" />
       </div>
-      <div className="w-1/2 space-y-4">
-        <h1 className="text-6xl font-semibold"><span className="text-green-400">Empower Your Career</span> with Expert Guidance</h1>
+      <div className="w-1/2 space-y-5">
+        <h1 className="text-5xl font-semibold"><span className="text-[#e77577]">Empower Your Career</span> with Expert Guidance</h1>
         <p className="text-xl">
           Take charge of your professional journey with personalized counseling,
           in-demand courses, and proven strategies to achieve your career goals.

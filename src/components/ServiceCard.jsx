@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const ServiceCard = ({ service }) => {
   const { image_url, service_name, category, pricing, counselor, id } = service;
   return (
-    <div className="card bg-white shadow-lg rounded-lg overflow-hidden border p-6 h-full flex flex-col justify-between space-y-7">
+    <div className="card bg-white shadow-lg rounded-lg overflow-hidden border p-6 h-full flex flex-col justify-between space-y-7 ">
       {/* Image */}
       <div className="card-image">
         <img

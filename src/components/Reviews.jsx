@@ -28,8 +28,8 @@ const Reviews = () => {
   };
   return (
     <div className="">
-        <h1 className="text-5xl font-bold border-b-[5px] border-green-400 mb-5 w-fit  ">What Client Say's About Us..</h1>
-     <div className="slider-container py-10">
+        <h1 className="text-5xl font-bold border-b-[5px] border-[#DE7C7D] shadow-xl p-8   mb-20 ">What Client Say's About Us..</h1>
+     <div className="slider-container pb-20">
      <Slider {...settings} className="h-full">
         
           {reviews.map((review) => (
