@@ -14,18 +14,20 @@ const Home = () => {
     <div className="min-h-screen">
       <Helmet>
         <title>Home | Career Compass</title>
-
       </Helmet>
-     <section className="lg:max-w-[85%] mx-auto">
-     <Banner />
-      {/* <CategoryNav /> */}
-      <Services />
-      <Feature/>
-      <Reviews/>
-     </section>
-      
+      <section className="lg:max-w-[85%] mx-auto">
+        <Banner />
+      </section>
+      <section className="bg-gradient-to-br from-[#fff] via-[#c3002e19] to-purple-100 rounded-lg shadow-lg">
+        <Services />
+      </section>
+
+      <section className="lg:max-w-[85%] mx-auto mt-10 lg:mt-0">
+        <Feature />
+        <Reviews />
+      </section>
+
       <Outlet />
-      
     </div>
   );
 };

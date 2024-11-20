@@ -74,7 +74,7 @@ const Navbar = () => {
 const handleCross=()=>{setHide(true)}
   const handleHideShow = () => {setHide(!hide)};
   return (
-    <div className="navbar  bg-[#dff2eb2f] lg:max-w-[85%] mx-auto py-3 lg:py-10 ">
+    <div className="navbar   lg:max-w-[85%] mx-auto py-3 lg:py-10 ">
       <div className="navbar-start">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="z-50 lg:hidden mr-3">

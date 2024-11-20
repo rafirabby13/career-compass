@@ -5,7 +5,9 @@ import Footer from "../components/Footer.jsx";
 const Main = () => {
     return (
         <div>
+            <section className="bg-[#dff2eb2f]">
            <Navbar />
+           </section>
             <Outlet/>
             <Footer />
         </div>
