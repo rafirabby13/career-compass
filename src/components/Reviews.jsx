@@ -26,14 +26,14 @@ const Reviews = () => {
     cssEase: "ease",
     responsive: [
       {
-        breakpoint: 728,
+        breakpoint: 828,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 1224,
+        breakpoint: 1524,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,

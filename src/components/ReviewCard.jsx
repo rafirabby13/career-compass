@@ -8,7 +8,7 @@ const ReviewCard = ({ review }) => {
   const { name, profession, feedback, rating, image } = review;
 
   return (
-    <div className="px-5 py-10  rounded-lg max-w-sm bg-[#FAF6E3] flex flex-col justify-between h-[330px] shadow-xl mx-4">
+    <div className="px-5 py-10  rounded-lg max-w-sm bg-[#FAF6E3] flex flex-col justify-between h-[330px] shadow-xl ">
       <div className="flex items-center gap-4">
         <img
           className="h-16 w-16 rounded-full"
