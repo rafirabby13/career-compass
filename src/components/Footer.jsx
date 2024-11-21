@@ -108,7 +108,7 @@ const Footer = () => {
             <a className="link link-hover">Cookie Policy</a>
           </div>
         </div>
-        <footer className="border-t py-10">
+        <footer className="border-t py-10 pb-10">
         <div className="flex flex-col md:flex-row gap-10 justify-between max-w-[80%] mx-auto">
           <aside className="grid-flow-col items-center">
             <p>
