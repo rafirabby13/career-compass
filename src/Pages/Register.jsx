@@ -125,7 +125,7 @@ const Register = () => {
     // console.log(hide);
   };
   return (
-    <div className="max-w-lg mx-auto pb-20 lg:pb-0 min-h-screen py-20">
+    <div className="max-w-lg mx-auto pb-20  min-h-screen py-20">
        <Helmet>
         <title>Register | Career Compass</title>
       </Helmet>
