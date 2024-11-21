@@ -12,11 +12,11 @@ const Feature = () => {
   const { user } = useContext(AuthContext);
 
   return (
-    <div className="pb-20 lg:pt-20 lg:pb-60">
+    <div className="pb-20 pt-20 lg:pb-20">
       <h1 className="text-xl md:text-3xl lg:text-4xl font-bold border-b-[3px] lg:border-b-[5px] border-[#c3002f] shadow-md  lg:shadow-2xl p-2 lg:p-8 mb-4 lg:mb-20 text-center lg:text-start">
         Feature
       </h1>
-      <div className="flex flex-col lg:flex-row gap-4 lg:gap-20 items-center justify-between space-y-5 py-20 ">
+      <div className="flex flex-col lg:flex-row gap-4 md:gap-12 lg:gap-20 items-center justify-between space-y-5 py-20 ">
         <div className="lg:w-1/2 relative ">
           <img src={lady} alt="Career Guidance Icon" />
           <img

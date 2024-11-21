@@ -76,7 +76,7 @@ const Login = () => {
     // console.log(email);
   };
   return (
-    <div className="max-w-lg mx-auto lg:py-20 py-10">
+    <div className="max-w-lg mx-auto lg:py-20 py-10 min-h-screen">
       <Helmet>
         <title>Login | Career Compass</title>
       </Helmet>
