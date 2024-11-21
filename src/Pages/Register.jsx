@@ -106,7 +106,7 @@ const Register = () => {
         navigate(location?.state ? location.state : "/");
         Swal.fire({
           icon: "success",
-          title: "Yess...",
+          title: "Success",
           text: "Registered and logged in!",
         });
       })

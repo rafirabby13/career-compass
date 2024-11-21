@@ -16,22 +16,22 @@ const Team = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 py-3 lg:py-10">
-        <div className="space-y-3 pb-5 text-center bg-slate-100">
+        <div className="space-y-3 pb-5 text-center bg-[#FFF7D1] ">
           <img className="h-80 mx-auto w-full hover:scale-125 transition-all duration-500" src={w1} alt="" />
           <p className="text-red-500 font-bold text-xl">Emily Carter</p>
           <p className="text-lg">Career Strategy Architect</p>
         </div>
-        <div className="space-y-3 pb-5 text-center bg-slate-100">
+        <div className="space-y-3 pb-5 text-center bg-[#FFF7D1] ">
           <img className="h-80 mx-auto w-full hover:scale-125 transition-all duration-500" src={m1} alt="" />
           <p className="text-red-500 font-bold text-xl">James Harper</p>
           <p className="text-lg">Leadership and Personal Development</p>
         </div>
-        <div className="space-y-3 pb-5 text-center bg-slate-100">
+        <div className="space-y-3 pb-5 text-center bg-[#FFF7D1] ">
           <img className="h-80 mx-auto w-full hover:scale-125 transition-all duration-500" src={w2} alt="" />
           <p className="text-red-500 font-bold text-xl">Priya Shah</p>
           <p className="text-lg">Career Change Specialist</p>
         </div>
-        <div className="space-y-3 pb-5 text-center bg-slate-100">
+        <div className="space-y-3 pb-5 text-center bg-[#FFF7D1] ">
           <img className="h-80 mx-auto w-full hover:scale-125 transition-all duration-500" src={m2} alt="" />
           <p className="text-red-500 font-bold text-xl">Ethan Brooks</p>
           <p className="text-lg">Youth Career Coach</p>

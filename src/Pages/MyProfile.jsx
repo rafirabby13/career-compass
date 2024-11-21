@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet";
 import { useNavigate } from "react-router-dom";
 import auth from "../Firebase/Firebase.init.js";
 import { updateProfile } from "firebase/auth";
+import Swal from "sweetalert2";
 
 const MyProfile = () => {
   const { user, updateUserPRofile, setUser, loading, setUpdating } =
@@ -33,6 +34,11 @@ const MyProfile = () => {
         navigate("/");
         setUpdating((prev) => !prev);
         e.target.reset();
+        Swal.fire({
+          icon: "success",
+          title: "Success",
+          text: "Profile Updated!",
+        });
         // ...
       })
       .catch((error) => {

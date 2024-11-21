@@ -34,7 +34,7 @@ const Comment = () => {
       </form>
       <div>
         <div className=" lg:py-20 xl:w-3/4  mx-auto px-0 md:px-32">
-          <h1 className="text-xl lg:text-3xl font-bold mb-5">Comments....</h1>
+          <h1 className="text-xl lg:text-3xl font-bold mb-5">Comments...</h1>
 
           <div className="flex flex-col gap-5">
             {comment?.map((comment, index) => (
