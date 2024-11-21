@@ -109,7 +109,7 @@ const Navbar = () => {
         </div>
         <div className="flex items-center gap-4">
           <img
-            className="h-16 w-16 animate__animated animate__flip animate__slow animate__delay-3s animate__infinite rounded-full hidden lg:flex"
+            className="h-16 w-16 animate__animated animate__flip animate__slow animate__delay-3s animate__infinite rounded-xl hidden lg:flex"
             src={logo}
             alt=""
           />
