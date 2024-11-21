@@ -6,6 +6,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import ForgetPassword from "./ForgetPassword.jsx";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 const Login = () => {
   const { loginWithEmailPass, loginWithGoogle, setEmail, setUser, setUpdating } = useContext(AuthContext);
@@ -76,6 +77,9 @@ const Login = () => {
   };
   return (
     <div className="max-w-lg mx-auto lg:py-20 py-10">
+      <Helmet>
+        <title>Login | Career Compass</title>
+      </Helmet>
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">

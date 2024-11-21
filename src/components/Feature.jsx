@@ -17,7 +17,7 @@ const Feature = () => {
         Feature
       </h1>
       <div className="flex flex-col lg:flex-row gap-4 lg:gap-20 items-center justify-between space-y-5 py-20 ">
-        <div className="lg:w-1/2 relative">
+        <div className="lg:w-1/2 relative ">
           <img src={lady} alt="Career Guidance Icon" />
           <img
             className="hidden xl:flex absolute -bottom-20 -left-20 shadow-2xl rounded-xl  xl:h-40 2xl:h-60 animate__animated animate__pulse animate__fast animate__delay-3s animate__infinite "

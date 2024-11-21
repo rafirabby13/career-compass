@@ -109,7 +109,7 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer className="bg-base-200 text-base-content border-base-300 border-t  pt-10">
+      <footer className="bg-base-200 text-base-content border-base-300 border-t  py-10">
         <div className="flex flex-col md:flex-row gap-10 justify-between max-w-[80%] mx-auto">
           <aside className="grid-flow-col items-center">
             <p>

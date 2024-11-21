@@ -58,8 +58,11 @@ const MyProfile = () => {
           alt="User Profile"
           className="rounded-full w-48 h-48 border-4 border-indigo-500 mx-auto"
         />
-        <p className="text-xl lg:text-2xl text-[#c3002f] font-medium">
+        <p className="text-xl lg:text-3xl text-[#c3002f] font-medium">
           Email: {user.email}
+        </p>
+        <p className="text-xl lg:text-2xl text-[#c3002e94] font-medium">
+          photoURL: {user.photoURL}
         </p>
 
         {/* Edit Profile Section */}

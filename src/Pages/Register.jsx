@@ -6,6 +6,7 @@ import { BsEyeFill, BsEyeSlash } from "react-icons/bs";
 import Swal from "sweetalert2";
 import auth from "../Firebase/Firebase.init.js";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 const Register = () => {
   const [err, setErr] = useState("");
@@ -125,6 +126,9 @@ const Register = () => {
   };
   return (
     <div className="max-w-lg mx-auto pb-20 lg:pb-0 min-h-screen">
+       <Helmet>
+        <title>Register | Career Compass</title>
+      </Helmet>
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">
