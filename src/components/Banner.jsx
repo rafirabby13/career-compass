@@ -25,13 +25,14 @@ const Banner = () => {
         // Include Swiper modules
         modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
         autoplay={{
+          
           delay: 3000,
           disableOnInteraction: false,
         }}
+        spaceBetween={50}
         slidesPerView={1}
         navigation
       >
-        {/* Define individual slides */}
         <SwiperSlide className="">
           <div className="flex flex-col lg:flex-row items-center h-full bg-gradient-to-r from-[#DE7C7D]/20  via-white/40 to-purple-500/20 backdrop-blur-3xl justify-between gap-2 lg:gap-0 z-10 pt-10 lg:pt-0">
             <div className=" text-center lg:text-start lg:w-2/5    lg:pl-16 lg:pr-8 space-y-2 lg:space-y-4 ">

@@ -124,7 +124,7 @@ const Register = () => {
     // console.log(hide);
   };
   return (
-    <div className="max-w-lg mx-auto pb-20 lg:pb-0">
+    <div className="max-w-lg mx-auto pb-20 lg:pb-0 min-h-screen">
       <div className="card bg-base-100 w-full shrink-0 shadow-2xl ">
         <form className="card-body" onSubmit={handleSubmit}>
           <div className="form-control">

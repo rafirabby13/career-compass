@@ -78,10 +78,10 @@ const Footer = () => {
     //    </div>
     //   </footer>
     // </div>
-    <div className="bg-base-200 text-base-content pb-10 pt-4 lg:pt-20">
+    <div className="bg-base-200 foote text-base-content  pt-4 lg:pt-20">
       <div className="w-fit mx-auto text-center space-y-5 ">
-        <img className="w-fit mx-auto rounded-xl shadow-2xl animate__animated animate__swing animate__slow animate__delay-3s animate__infinite h-32  lg:h-60"  src={logo} alt="" />
-        <h1 className="text-2xl lg:text-4xl font-bold py-10 ">Career Compass</h1>
+        <img className="w-fit  mx-auto rounded-xl shadow-2xl animate__animated animate__swing animate__slow animate__delay-3s animate__infinite h-32  lg:h-60"  src={logo} alt="" />
+        <h1 className="text-xl lg:text-6xl font-bold py-10 ">Career Compass</h1>
       </div>
       <footer className=" py-4 lg:py-10 ">
 

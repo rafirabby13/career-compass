@@ -9,6 +9,7 @@ import { RxCross1 } from "react-icons/rx";
 const Navbar = () => {
   const [hide, setHide] = useState(true);
   const { user, logoutUser, loading } = useContext(AuthContext);
+  const [isTooltipVisible, setTooltipVisible] = useState(false);
   // console.log(user);
   if (loading) {
     return (
@@ -71,8 +72,12 @@ const Navbar = () => {
       </li>
     </>
   );
-const handleCross=()=>{setHide(true)}
-  const handleHideShow = () => {setHide(!hide)};
+  const handleCross = () => {
+    setHide(true);
+  };
+  const handleHideShow = () => {
+    setHide(!hide);
+  };
   return (
     <div className="navbar   lg:max-w-[85%] mx-auto py-3 lg:py-10 ">
       <div className="navbar-start">
@@ -90,9 +95,14 @@ const handleCross=()=>{setHide(true)}
               )}
             </div>
           </div>
-          <ul onClick={handleCross}
+          <ul
+            onClick={handleCross}
             tabIndex={0}
-            className={`   ${hide ? '' : 'bg-base-100 menu menu-sm dropdown-content  rounded-box  mt-3 w-52 p-2  z-50 shadow'}`}
+            className={`   ${
+              hide
+                ? ""
+                : "bg-base-100 menu menu-sm dropdown-content  rounded-box  mt-3 w-52 p-2  z-50 shadow"
+            }`}
           >
             {hide ? "" : links}
           </ul>
@@ -120,12 +130,21 @@ const handleCross=()=>{setHide(true)}
             >
               Logout
             </Link>
-            <img
-              className={`h-10 w-10 lg:h-16 lg:w-16 rounded-full `}
-              src={`${user?.photoURL}`}
-              title={user?.displayName}
-              alt={user?.displayName}
-            />
+            <div
+              className={`tooltip tooltip-bottom tooltip-info ${
+                isTooltipVisible ? "tooltip-open" : ""
+              }`}
+              data-tip={user?.displayName}
+              onMouseEnter={() => setTooltipVisible(true)}
+              onMouseLeave={() => setTooltipVisible(false)}
+            >
+              <img
+                className={`h-10 w-10 lg:h-16 lg:w-16 rounded-full `}
+                src={`${user?.photoURL}`}
+                // title={user?.displayName}
+                alt={user?.displayName}
+              />
+            </div>
           </div>
         ) : (
           <Link to="/login" className="btn bg-[#c3002f] text-[#FFF0D1]">
