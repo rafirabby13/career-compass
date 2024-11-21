@@ -18,28 +18,28 @@ const Reviews = () => {
   }, []);
   const settings = {
     infinite: true,
-    slidesToShow: 3,
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
     speed: 4000,
     autoplaySpeed: 1000,
     cssEase: "ease",
-    responsive: [
-      {
-        breakpoint: 828,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-      {
-        breakpoint: 1524,
-        settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+    // responsive: [
+    //   {
+    //     breakpoint: 768,
+    //     settings: {
+    //       slidesToShow: 1,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    //   {
+    //     breakpoint: 1224,
+    //     settings: {
+    //       slidesToShow: 2,
+    //       slidesToScroll: 1,
+    //     },
+    //   },
+    // ],
   };
 
   return (

@@ -8,6 +8,7 @@ import CategoryNav from "./CategoryNav.jsx";
 import Feature from "./Feature.jsx";
 import Reviews from "./Reviews.jsx";
 import { Helmet } from "react-helmet";
+import Rev from "./Rev.jsx";
 
 const Home = () => {
   return (
@@ -24,7 +25,8 @@ const Home = () => {
 
       <section className="lg:max-w-[85%] mx-auto mt-10 lg:mt-0">
         <Feature />
-        <Reviews />
+        {/* <Reviews /> */}
+        <Rev/>
       </section>
 
       <Outlet />
